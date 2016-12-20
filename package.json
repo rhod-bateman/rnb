@@ -4,7 +4,19 @@
   "description": "beth and rhods website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "babel src --out-dir dist --watch --source-maps --copy-files",
+    "clean": "rimraf dist",
+    "prebuild-server": "npm test && npm run clean",
+    "build-server": "babel orchestration -s -D -d dist",
+    "start-server": "NODE_ENV=production node dist/index.js",
+    "full-build": "npm run clean && npm run build && cd client && npm run build && mkdir ../dist/static/ && cp dist/* ../dist/static",
+    "start": "npm-run-all --parallel dev-server lint-watch test-watch",
+    "start-server": "NODE_ENV=production node dist/app.js",
+    "dev-server": "babel-node node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js --inline --hot --quiet --port 8080",
+    "lint": "esw src",
+    "lint-watch": "npm run lint -- --watch",
+    "prebuild-ui": "rimraf dist && npm run test && npm run test-coverage",
+    "build-ui": "babel-node node_modules/webpack/bin/webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -15,31 +27,44 @@
   "bugs": {
     "url": "https://github.com/rhodwilliams/rnb/issues"
   },
-  "dependencies":{
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
-    "react-hot-loader": "3.0.0-beta.6",
+  "dependencies": {
+    "axios": "^0.13.1",
+    "express": "4.14.0",
+    "express-session": "1.14.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
     "react-router": "3.0.0",
     "recompose": "0.20.2"
   },
-  "devDependencies":{
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
     "babel-core": "6.18.2",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
     "babel-preset-latest": "6.16.0",
     "babel-preset-react": "6.16.0",
     "babel-preset-stage-2": "6.18.0",
     "babel-register": "6.18.0",
-    "eslint-config-ukweb": "git+https://github.kdc.capitalone.com/UKWeb/eslint-config-ukweb.git#v1.0.2",
+    "babel-runtime": "^6.11.6",
+    "eslint": "^3.6.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-react": "^6.3.0",
+    "eslint-watch": "^2.1.14",
+    "npm-run-all": "^3.1.2",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^0.13.0",
+    "react-hot-loader": "3.0.0-beta.6",
     "rimraf": "2.5.4",
     "stylelint-config-ukweb": "git+https://github.kdc.capitalone.com/UKWeb/stylelint-config-ukweb.git#v0.0.2",
-    "testtools": "git+https://github.kdc.capitalone.com/UKWeb/testtools.git#v0.0.6",
-    "ukwebbuildtools": "git+https://github.kdc.capitalone.com/UKWeb/buildtools.git#v0.0.10",
-    "webpack": "1.13.2"
+    "webpack": "1.13.2",
+    "webpack-dev-middleware": "^1.8.3",
+    "webpack-dev-server": "^1.16.1",
+    "webpack-hot-middleware": "^2.12.2"
   },
-  "eslintConfig": {
-    "extends": "ukweb"
-  },
-  "homepage": "https://github.com/rhodwilliams/rnb#readme",
-  "stylelint": {
-    "extends": "stylelint-config-ukweb"
-  }
+  "homepage": "https://github.com/rhodwilliams/rnb#readme"
 }
