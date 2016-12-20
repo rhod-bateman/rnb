@@ -11,7 +11,7 @@
     "start-server": "NODE_ENV=production node dist/index.js",
     "full-build": "npm run clean && npm run build && cd client && npm run build && mkdir ../dist/static/ && cp dist/* ../dist/static",
     "start": "npm-run-all --parallel dev-server lint-watch test-watch",
-    "start-server": "NODE_ENV=production node dist/app.js",
+    "start-server": "node dist/index.js",
     "dev-server": "babel-node node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js --inline --hot --quiet --port 8080",
     "lint": "esw src",
     "lint-watch": "npm run lint -- --watch",

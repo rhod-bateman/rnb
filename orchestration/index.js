@@ -2,8 +2,9 @@
  * Created by qtj929 on 20/12/2016.
  */
 import express from 'express';
-import session from 'express-session';
+//import session from 'express-session';
 import config from './config.json';
+import http from 'http';
 //import bodyParser from 'bodyparser';
 
 import homeRoute from './routes/home';
@@ -16,9 +17,9 @@ app.disable('x-powered-by');
 
 
 
-app.use('/', homeRoute);
+app.use('/', homeRoute.handle);
 
 const options = {};
 
-app.server = https.createServer(options, app);
+app.server = http.createServer(app);
 app.server.listen(config.server.port);
