@@ -1,0 +1,45 @@
+{
+  "name": "rnb",
+  "version": "0.0.1",
+  "description": "beth and rhods website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhodwilliams/rnb.git"
+  },
+  "author": "rhod williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhodwilliams/rnb/issues"
+  },
+  "dependencies":{
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-router": "3.0.0",
+    "recompose": "0.20.2"
+  },
+  "devDependencies":{
+    "babel-core": "6.18.2",
+    "babel-preset-latest": "6.16.0",
+    "babel-preset-react": "6.16.0",
+    "babel-preset-stage-2": "6.18.0",
+    "babel-register": "6.18.0",
+    "eslint-config-ukweb": "git+https://github.kdc.capitalone.com/UKWeb/eslint-config-ukweb.git#v1.0.2",
+    "rimraf": "2.5.4",
+    "stylelint-config-ukweb": "git+https://github.kdc.capitalone.com/UKWeb/stylelint-config-ukweb.git#v0.0.2",
+    "testtools": "git+https://github.kdc.capitalone.com/UKWeb/testtools.git#v0.0.6",
+    "ukwebbuildtools": "git+https://github.kdc.capitalone.com/UKWeb/buildtools.git#v0.0.10",
+    "webpack": "1.13.2"
+  },
+  "eslintConfig": {
+    "extends": "ukweb"
+  },
+  "homepage": "https://github.com/rhodwilliams/rnb#readme",
+  "stylelint": {
+    "extends": "stylelint-config-ukweb"
+  }
+}
