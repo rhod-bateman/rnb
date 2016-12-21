@@ -10,6 +10,8 @@ import AppComponent from '../components/App';
 import reducers from '../reducers/index';
 import React from 'react';
 
+import fs from 'fs';
+
 const handleRender = (state) => {
     // Create a new Redux store instance
     const store = createStore(reducers, state);
@@ -31,21 +33,14 @@ const handleRender = (state) => {
 };
 
 const renderFullPage = (html, preloadedState)  => {
-    return `
-    <!doctype html>
-    <html>
-      <head>
-        <title>Redux Universal Example</title>
-      </head>
-      <body>
-        <div id="root">${html}</div>
-        <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
-        </script>
-        <script src="/dist/bundle.js"></script>
-      </body>
-    </html>
-    `
+    const rootElement = `<div id="root">${html}</div>`;
+    const stateElement = `<script id="state">${JSON.stringify(preloadedState)}</script>`;
+
+    let indexHtml = fs.readFileSync(path.resolve('../index.html', 'utf8');
+    indexHtml = indexHtml.replace('<div id="root"></div>', rootElement);
+    indexHtml = indexHtml.replace('<script id="state"></script>', stateElement);
+
+    return indexHtml;
 };
 
 export default handleRender;

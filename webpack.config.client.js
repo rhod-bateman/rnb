@@ -4,6 +4,8 @@ var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname, 'src');
 
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 var config = {
     entry: SRC_DIR + '/client/index.js',
     output: {
@@ -15,19 +17,17 @@ var config = {
             {
                 test : /\.js?/,
                 include : SRC_DIR,
+                exclude: /node_modules/,
                 loader : 'babel'
-            },
-            {
-                test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                include: SRC_DIR,
-                loader: "file"
-            },
-            {
-                test: /\.(html)$/,
-                loader: "file?name=[path][name].[ext]&context=./app/static"
             }
         ]
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            // {output}/to/file.txt
+            { from: 'src/client/index.html', to: 'index.html' },
+        ])
+    ]
 };
 
 module.exports = config;
