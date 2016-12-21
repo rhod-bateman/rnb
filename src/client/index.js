@@ -9,13 +9,14 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
-import App from '../src/components/App';
+import App from '../components/App';
+import reducers from '../reducers/index';
 
 // Grab the state from a global injected into server-generated HTML
 const preloadedState = window.__PRELOADED_STATE__
 
 // Create Redux store with initial state
-const store = createStore(counterApp, preloadedState)
+const store = createStore(reducers, preloadedState)
 
 render(
     <Provider store={store}>

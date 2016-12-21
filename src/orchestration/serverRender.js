@@ -7,10 +7,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import AppComponent from '../components/App';
+import reducers from '../reducers/index';
+import React from 'react';
 
 const handleRender = (state) => {
     // Create a new Redux store instance
-    const store = createStore(counterApp)
+    const store = createStore(reducers, state);
 
     // Render the component to a string
     const html = renderToString(
