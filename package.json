@@ -7,7 +7,7 @@
     "debug": "babel src --out-dir dist --watch --source-maps --copy-files",
     "clean": "rimraf dist",
     "prebuild-server": "npm test && npm run clean",
-    "build-server": "babel orchestration -s -D -d dist",
+    "build-server": "babel src -s -D -d dist",
     "start-server": "NODE_ENV=production node dist/index.js",
     "full-build": "npm run clean && npm run build && cd client && npm run build && mkdir ../dist/static/ && cp dist/* ../dist/static",
     "start": "npm-run-all --parallel dev-server lint-watch test-watch",

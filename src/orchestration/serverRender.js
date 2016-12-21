@@ -6,6 +6,7 @@ import react from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
+import AppComponent from '../components/App';
 
 const handleRender = (state) => {
     // Create a new Redux store instance
@@ -14,7 +15,7 @@ const handleRender = (state) => {
     // Render the component to a string
     const html = renderToString(
         <Provider store={store}>
-            <App />
+            <AppComponent />
         </Provider>
     );
 
@@ -39,7 +40,7 @@ const renderFullPage = (html, preloadedState)  => {
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
         </script>
-        <script src="/static/bundle.js"></script>
+        <script src="/dist/bundle.js"></script>
       </body>
     </html>
     `

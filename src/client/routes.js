@@ -4,9 +4,9 @@
 
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import App from '../containers/App';
-import HomeContainer from '../containers/IndexContainer';
-import NotFound from '../containers/Common/NotFound';
+import App from '../src/components/App';
+import HomeContainer from '../src/components/IndexContainer';
+import NotFound from '../src/components/Common/NotFound';
 
 const routes = (
     <Route path="/" component={App}>

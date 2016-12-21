@@ -9,7 +9,7 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
-import App from './containers/App';
+import App from '../src/components/App';
 
 // Grab the state from a global injected into server-generated HTML
 const preloadedState = window.__PRELOADED_STATE__
