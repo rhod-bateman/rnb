@@ -16,8 +16,7 @@ app.disable('x-powered-by');
 //app.use(bodyParser.urlencoded({ extended: false }));
 
 // Allow access to bundle.
-var public_folder = path.resolve('../public');
-app.use('/js', express.static(path.resolve(public_folder, 'js')));
+app.use('/js', express.static(path.resolve(config.build.jsDirectory)));
 
 app.use('/', homeRoute.handle);
 

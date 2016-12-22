@@ -1,10 +1,10 @@
 // USing ES5 to support webpack
 var publicLocation = "./public";
-var prod = process.env.NODE_ENV == 'production';
+var dev = process.env.NODE_ENV == 'development';
 
 var config = {
     "server":{
-        "port": prod ? 80 : 8080,
+        "port": dev ? 8080 : 80,
     },
     "build": {
         "indexHtmlLocation": "./client/index.html",
