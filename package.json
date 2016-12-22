@@ -7,7 +7,6 @@
     "debug": "babel src --out-dir dist --watch --source-maps --copy-files",
     "clean": "rimraf dist",
     "prebuild-server": "npm test && npm run clean",
-    "full-build": "npm run clean && npm run build && cd client && npm run build && mkdir ../dist/static/ && cp dist/* ../dist/static",
     "start": "npm-run-all --parallel dev-server lint-watch test-watch",
     "start-server": "node dist/orchestration/index.js",
     "dev-server": "babel-node node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js --inline --hot --quiet --port 8080",
@@ -15,10 +14,13 @@
     "lint-watch": "npm run lint -- --watch",
     "prebuild-ui": "rimraf dist && npm run test && npm run test-coverage",
     "build-ui": "babel-node node_modules/webpack/bin/webpack --config webpack.config.prod.js",
-    "build-server": "babel src -s -D -d dist",
+    "build-server": "webpack -d --config webpack.config.server.js && npm run build-client",
     "build-client": "webpack -d --config webpack.config.client.js",
+    "full-build": "npm run clean && npm run build-server",
     "webpack-watch": "webpack -d --config webpack.config.client.js --watch",
-    "webpack-dev-server": "webpack-dev-server --content-base dist/"
+    "webpack-dev-server": "webpack-dev-server --content-base dist/",
+    "aws-run":"node ./dist/server.js",
+    "aws-bundle":"zip -r rnb.zip ./dist"
   },
   "repository": {
     "type": "git",

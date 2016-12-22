@@ -2,3 +2,4 @@ testOutput/*
 *compiled.js
 dist/
 node_modules/
+.idea/

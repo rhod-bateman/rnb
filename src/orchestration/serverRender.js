@@ -13,7 +13,7 @@ import config from './config';
 import fs from "fs";
 import path from 'path';
 let indexHtml = null;
-let indexHtmlPath = path.resolve('../', config.build.indexHtmlLocation);
+let indexHtmlPath = path.resolve(config.build.indexHtmlLocation);
 
 /**
  * Builds the serverside page from a the client template.

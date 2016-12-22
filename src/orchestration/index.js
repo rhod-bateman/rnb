@@ -25,3 +25,5 @@ const options = {};
 
 app.server = http.createServer(app);
 app.server.listen(config.server.port);
+
+export default app;
