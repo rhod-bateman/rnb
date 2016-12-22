@@ -8,10 +8,12 @@ import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import AppComponent from '../components/App';
 import reducers from '../reducers/index';
+import config from './config';
 
 import fs from "fs";
 import path from 'path';
 let indexHtml = null;
+let indexHtmlPath = path.resolve('../', config.build.indexHtmlLocation);
 
 /**
  * Builds the serverside page from a the client template.
@@ -26,7 +28,7 @@ const renderServersidePage = (htmlFragment, preloadedState)  => {
             return resolve(buildHtml(indexHtml, htmlFragment, preloadedState));
         }
 
-        const filePath = path.resolve("../index.html");
+        const filePath = path.resolve(indexHtmlPath);
         fs.readFile(filePath, 'utf8', (err, data) => {
             if (err) {
                 reject(err);
