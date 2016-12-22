@@ -9,11 +9,18 @@ const config = (app) => {
     app.get('/home', handle);
 };
 
+/**
+ * Handles a request to the home route
+ * @param req
+ * @param res
+ * @param next
+ */
 const handle = (req, res, next) => {
 
-    const html = serverRender({});
-    res.send(html);
-    next();
+    serverRender({}).then((html) => {
+        res.send(html);
+        next();
+    });
 };
 
 export default {config, handle};

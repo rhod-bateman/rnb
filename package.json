@@ -7,7 +7,6 @@
     "debug": "babel src --out-dir dist --watch --source-maps --copy-files",
     "clean": "rimraf dist",
     "prebuild-server": "npm test && npm run clean",
-    "build-server": "babel src -s -D -d dist",
     "full-build": "npm run clean && npm run build && cd client && npm run build && mkdir ../dist/static/ && cp dist/* ../dist/static",
     "start": "npm-run-all --parallel dev-server lint-watch test-watch",
     "start-server": "node dist/orchestration/index.js",
@@ -16,7 +15,8 @@
     "lint-watch": "npm run lint -- --watch",
     "prebuild-ui": "rimraf dist && npm run test && npm run test-coverage",
     "build-ui": "babel-node node_modules/webpack/bin/webpack --config webpack.config.prod.js",
-    "webpack-build-client": "webpack -d --config webpack.config.client.js",
+    "build-server": "babel src -s -D -d dist",
+    "build-client": "webpack -d --config webpack.config.client.js",
     "webpack-watch": "webpack -d --config webpack.config.client.js --watch",
     "webpack-dev-server": "webpack-dev-server --content-base dist/"
   },

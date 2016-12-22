@@ -15,8 +15,6 @@ app.disable('x-powered-by');
 //app.use(bodyParser.urlencoded({ extended: false }));
 
 
-
-
 app.use('/', homeRoute.handle);
 
 const options = {};
