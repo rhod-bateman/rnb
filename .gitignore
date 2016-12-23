@@ -1,3 +1,9 @@
+testOutput/*
+*compiled.js
+dist/
+node_modules/
+.idea/
+
 # Logs
 logs
 *.log
@@ -35,3 +41,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+
+

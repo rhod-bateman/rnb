@@ -1,0 +1,15 @@
+/**
+ * Created by qtj929 on 20/12/2016.
+ */
+{
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "impliedStrict": true,
+            "experimentalObjectRestSpread": true
+        }
+    }
+}
