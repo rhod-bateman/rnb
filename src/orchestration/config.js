@@ -1,10 +1,10 @@
 // USing ES5 to support webpack
+// using process.env.PORT to support elastic beanstalk.
 var publicLocation = "./public";
-var dev = process.env.NODE_ENV == 'development';
 
 var config = {
     "server":{
-        "port": dev ? 8080 : 80,
+        "port": process.env.PORT,
     },
     "build": {
         "indexHtmlLocation": "./client/index.html",
