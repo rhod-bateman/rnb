@@ -8,7 +8,6 @@ import styles from './header.css';
 import text from './text';
 
 const Header = (structure) => (
-
 <div>
     <h1 className={styles.test}>{text.Header.title}</h1>
 </div>
