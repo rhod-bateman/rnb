@@ -1,13 +1,25 @@
 /**
  * Created by qtj929 on 20/12/2016.
  */
-import React from 'react';
-import {render} from 'react-dom';
+import React, { PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-class App extends React.Component {
-    render () {
-        return <h1>Join us... Or die. </h1>
-    }
-};
+const App = (structure) => (
+    <div>
+        <h1>Rhod and Beth Wedding</h1>
+    </div>
+);
 
-export default App;
+const mapStateToProps = state => ({
+    structure: state
+})
+
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators({}, dispatch)
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);

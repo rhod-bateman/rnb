@@ -4,10 +4,10 @@ var publicLocation = "./public";
 
 var config = {
     "server":{
-        "port": process.env.PORT,
+        "port": process.env.PORT || 8001,
     },
     "build": {
-        "indexHtmlLocation": "./client/index.html",
+        "indexHtmlLocation": "./src/client/index.html",
         "publicLocation":publicLocation,
         "jsDirectory":publicLocation+"/js",
     },

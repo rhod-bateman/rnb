@@ -8,7 +8,7 @@ import http from 'http';
 import bodyParser from 'body-parser';
 import path from 'path';
 
-import homeRoute from './routes/home';
+import homeRoute from '../routes/home';
 
 const app = express();
 app.disable('x-powered-by');
