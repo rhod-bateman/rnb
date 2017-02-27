@@ -1,0 +1,23 @@
+@import '../base.css';
+
+:root {
+    --segmentColour: #f8f8ff;
+}
+
+.container {
+    margin: 1px auto;
+}
+
+.header{
+    background-color: var(--segmentColour);
+    width: 100%;
+    align-content: center;
+    padding: 2px auto;
+}
+
+.contentBox{
+    border: solid 1px var(--segmentColour);
+    width: 100%;
+    align-content: center;
+    padding: 2px auto;
+}
