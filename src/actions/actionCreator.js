@@ -5,10 +5,9 @@ import actions from './actions';
 import api from '../api'
 
 
-export const addSong = event =>
+export const addSong = name =>
     (dispatch) => {
         dispatch(actions.addSongRequested());
-        let name = event.target.elements.name;
         return api.addSong(name)
             .then((result) => {
                 dispatch(actions.addSongSuccess());
@@ -18,4 +17,16 @@ export const addSong = event =>
             });
     };
 
-export default { addSong };
+export const addFood = name =>
+    (dispatch) => {
+        dispatch(actions.addSongRequested());
+        return api.addSong(name)
+            .then((result) => {
+                dispatch(actions.addSongSuccess());
+            })
+            .catch((result) => {
+                dispatch(actions.addSongFailed());
+            });
+    };
+
+export default { addSong, addFood };

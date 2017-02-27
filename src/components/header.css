@@ -1,1 +1,6 @@
+@import './base.css';
 
+.header {
+    font-family: var(--headingFont);
+    font-size: 2em;
+}

@@ -18,9 +18,7 @@ const App = () => (
     <Rsvp></Rsvp>
     <WhereWhen></WhereWhen>
     <TimeTable></TimeTable>
-    <div>Dress code</div>
     <Gifts></Gifts>
-    <div>table plan</div>
     <Music></Music>
     <Food></Food>
     <div>Transport and travel</div>

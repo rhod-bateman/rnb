@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import styles from './food.css';
 import Segment from '../segment/Segment';
 import Input from '../input/input'
+import actionCreator from '../../actions/actionCreator';
 
 const Food = ({structure}) => (
     <Segment title={structure.title}>
@@ -23,8 +24,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators({}, dispatch)
-})
+    addSong: bindActionCreators(actionCreator.addSong, dispatch)
+});
 
 export default connect(
     mapStateToProps,

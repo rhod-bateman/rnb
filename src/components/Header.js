@@ -9,7 +9,7 @@ import text from './text';
 
 const Header = (structure) => (
 <div>
-    <h1 className={styles.test}>{text.Header.title}</h1>
+    <h1 className={styles.header}>{text.Header.title}</h1>
 </div>
 );
 

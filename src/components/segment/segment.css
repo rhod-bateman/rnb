@@ -12,12 +12,15 @@
     background-color: var(--segmentColour);
     width: 100%;
     align-content: center;
-    padding: 2px auto;
+    padding: 7px 5px 0;
+    font-family: var(--headingFont);
 }
 
 .contentBox{
     border: solid 1px var(--segmentColour);
     width: 100%;
     align-content: center;
-    padding: 2px auto;
+    padding: 5px;
+    font-family: var(--bodyFont);
+    font-size: 0.6rem;
 }

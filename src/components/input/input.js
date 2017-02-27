@@ -5,9 +5,17 @@
 import React, { PropTypes } from 'react';
 import styles from './input.css';
 
+const handleSubmit = (event, onSubmit) =>{
+    onSubmit(event.target.input.value);
+    event.preventDefault();
+    return false;
+}
+
+
 const Input = ({placeholder, onSubmit}) => (
-    <form submit={onSubmit}>
-        <input type="text" placeholder={placeholder}></input>
+    <form onSubmit={(event) => handleSubmit(event, onSubmit)}>
+        <input type="text" name="input" placeholder={placeholder}></input>
+        <input type="submit"></input>
     </form>
 );
 

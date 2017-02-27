@@ -20,7 +20,7 @@ const Food = ({structure}) => (
 );
 
 const mapStateToProps = state => ({
-    structure: state.segments.food
+    structure: state.segments.gifts
 });
 
 const mapDispatchToProps = dispatch => ({
