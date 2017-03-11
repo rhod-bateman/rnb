@@ -5,23 +5,19 @@
 import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import styles from './food.css';
+import styles from './accomodation.css';
 import Segment from '../segment/Segment';
 import Input from '../input/input'
 import actionCreator from '../../actions/actionCreator';
+import {accomodation} from '../../data/text';
 
-const Food = ({structure}) => (
-    <Segment title={structure.title}>
-        <p>After the ceremony we will providing a picnic.</p>
-        <p>In the evening there will be a hog roast.</p>
-        <p>If you have any allergies we should know about please let us know.</p>
-        <Input placeholder="I am allergic to..."></Input>
+const Accomodation = ({}) => (
+    <Segment title={accomodation.title}>
+        <p>{accomodation.intro}</p>
     </Segment>
 );
 
-const mapStateToProps = state => ({
-    structure: state.segments.food
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
     addSong: bindActionCreators(actionCreator.addSong, dispatch)
@@ -30,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Food);
+)(Accomodation);
 
 
 

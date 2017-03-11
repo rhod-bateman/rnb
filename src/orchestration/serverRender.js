@@ -3,65 +3,15 @@
  */
 
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import AppComponent from '../components/App';
-import reducers from '../reducers/index';
-import config from './config';
+import reducer from '../reducers/index';
+import config from '../config';
+import Html from '../components/Html'
+import thunk from 'redux-thunk'
 
-import fs from "fs";
-import path from 'path';
-let indexHtml = null;
-let indexHtmlPath = path.resolve(config.build.indexHtmlLocation);
-
-/**
- * Builds the serverside page from a the client template.
- * @param htmlFragment
- * @param preloadedState
- * @returns {Promise}
- */
-const renderServersidePage = (htmlFragment, preloadedState)  => {
-    return new Promise((resolve, reject) => {
-
-        if (indexHtml) {
-            return resolve(buildHtml(indexHtml, htmlFragment, preloadedState));
-        }
-
-        const filePath = path.resolve(indexHtmlPath);
-        fs.readFile(filePath, 'utf8', (err, data) => {
-            if (err) {
-                reject(err);
-            }
-
-            if (!data) {
-                return reject("no template found");
-            }
-
-            // Cache result
-            indexHtml = data;
-
-            resolve(buildHtml(indexHtml, htmlFragment, preloadedState));
-        });
-    });
-};
-
-/**
- * Injects an html fragement and some initial state into a template.
- * @param sourceHtml
- * @param htmlFragment
- * @param state
- * @returns {*|string|XML|void}
- */
-const buildHtml = (sourceHtml, htmlFragment, state) => {
-    const rootElement = `<div id="root">${htmlFragment}</div>`;
-    const stateElement = `<script id="state">${JSON.stringify(state)}</script>`;
-
-    let html = sourceHtml.replace('<div id="root"></div>', rootElement);
-    html = html.replace('<script id="state"></script>', stateElement);
-
-    return html;
-};
 
 /**
  * Handles the initial server-side render
@@ -70,22 +20,24 @@ const buildHtml = (sourceHtml, htmlFragment, state) => {
  */
 const handleRender = (state) => {
     // Create a new Redux store instance
-    const store = createStore(reducers, state);
+    const store = createStore(
+        reducer/*,
+        applyMiddleware([thunk]),
+        state*/
+    );
+
+    let stateString = JSON.stringify(store.getState());
 
     // Render the component to a string
     const html = renderToString(
-        <Provider store={store}>
-            <AppComponent />
-        </Provider>
+        <Html bundle={config.app.bundleName} title={config.app.title} state={stateString} css={config.app.css}>
+            <Provider store={store}>
+                <AppComponent />
+            </Provider>
+        </Html>
     );
 
-    // Grab the initial state from our Redux store
-    const preloadedState = store.getState();
-
-    // TODO: merge state.
-
-    // Send the rendered page back to the client
-    return renderServersidePage(html, preloadedState);
+    return html;
 };
 
 export default handleRender;

@@ -4,20 +4,16 @@
 import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import styles from './timetable.css';
+import styles from './gettingHere';
 import Segment from '../segment/Segment';
-import {timetable} from '../../data/text';
+import TimeTable from '../timetable/Timetable';
+import { gettingHere } from '../../data/text';
 
-
-const listItems = Object.keys(timetable.items).map((key) =>
-    <li>{key}:{timetable.items[key]}</li>
-);
-
-const TimeTable = () => (
-    <div>
-        <h3 >{timetable.title}</h3>
-        <ol>{ listItems }</ol>
-    </div>
+const BigDay = () => (
+    <Segment title={gettingHere.title}>
+        <p>{gettingHere.intro}</p>
+        <p>{gettingHere.taxi}</p>
+    </Segment>
 );
 
 const mapStateToProps = state => ({
@@ -30,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TimeTable);
+)(BigDay);
 
 
 

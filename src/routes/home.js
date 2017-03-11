@@ -17,10 +17,9 @@ const config = (app) => {
  */
 const handle = (req, res, next) => {
 
-    serverRender({}).then((html) => {
-        res.send(html);
-        next();
-    });
+    let html = serverRender({});
+    res.send(html);
+    next();
 };
 
 export default {config, handle};

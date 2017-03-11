@@ -9,15 +9,24 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './rsvp.css';
 import Segment from '../segment/Segment';
+import {rsvp} from '../../data/text';
 
 const Rsvp = ({structure}) => (
-    <Segment title={structure.title}>
-        <p>Please rsvp to bethandrhod@gmail.com by April 20th.</p>
+    <Segment title={rsvp.title}>
+        <p>{rsvp.intro}</p>
+        <p>{rsvp.poison}</p>
+        <p>{rsvp.poison2}</p>
+        <p>{rsvp.kids1}</p>
+        <p>{rsvp.kids2}</p>
+        <p>{rsvp.kids3}</p>
     </Segment>
 );
 
 const mapStateToProps = state => ({
-    structure: state.segments.rsvp
+    structure: state.segments.rsvp,
+    code: "123",
+    names: "names go here",
+    option:"yes"
 });
 
 const mapDispatchToProps = dispatch => ({

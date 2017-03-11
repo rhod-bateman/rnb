@@ -4,25 +4,22 @@
 import React, { PropTypes } from 'react';
 import styles from './app.css';
 import Header from './Header'
-import Rsvp from './rsvp/Rsvp'
-import WhereWhen from './whereWhen/WhereWhen'
-import TimeTable from './timetable/TimeTable'
+import BigDay from './bigDay/bigDay'
+import GettingHere from './gettingHere/GettingHere'
 import Music from './music/Music'
-import Food from './food/Food'
+import Food from './accomodation/Accomodation'
 import Gifts from './gifts/Gifts'
-
+import Rsvp from './rsvp/Rsvp'
 
 const App = () => (
 <div>
-    <Header></Header>
-    <Rsvp></Rsvp>
-    <WhereWhen></WhereWhen>
-    <TimeTable></TimeTable>
-    <Gifts></Gifts>
-    <Music></Music>
-    <Food></Food>
-    <div>Transport and travel</div>
-    <div>Where to stay</div>
+    <Header/>
+    <BigDay/>
+    <GettingHere/>
+    <Rsvp/>
+    <Music/>
+    <Gifts/>
+    <Food/>
 </div>
 );
 

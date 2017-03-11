@@ -11,12 +11,13 @@ import styles from './music.css';
 import Segment from '../segment/Segment';
 import actionCreator from '../../actions/actionCreator';
 import Input from '../input/input'
+import {music} from '../../data/text';
 
-const Music = ({structure, addSong}) => (
-    <Segment title={structure.title}>
-        <p>Some band will be playing for us from 8:30pm.</p>
-        <p>After that we will be having a digital DJ.</p>
-        <p>If you have any preferences for songs, please let us know:</p>
+const Music = ({addSong}) => (
+    <Segment title={music.title}>
+        <p>{music.p1}</p>
+        <p>{music.p2}</p>
+        <p>{music.p3}</p>
         <Input placeholder="This awesome song by this awesome band" onSubmit={addSong}></Input>
     </Segment>
 );

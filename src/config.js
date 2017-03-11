@@ -1,15 +1,18 @@
 // USing ES5 to support webpack
 // using process.env.PORT to support elastic beanstalk.
-var publicLocation = "./public";
+var publicLocation = "./";
 
 var config = {
+    app:{
+        bundleName:"./static/client.js",
+        title:"Beth and Rhod",
+        css:"./static/client.css"
+    },
     "server":{
         "port": process.env.PORT || 8001,
     },
     "build": {
-        "indexHtmlLocation": "./src/client/index.html",
-        "publicLocation":publicLocation,
-        "jsDirectory":publicLocation+"/js",
+        "staticDir":"./dist/static",
     },
     "aws":{
         "role":"arn:aws:iam::362995553964:role/rnbRole",
@@ -19,7 +22,6 @@ var config = {
         }    ,
         "region":"eu-west-2"
     }
-
 };
 
 

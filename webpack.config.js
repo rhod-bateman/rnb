@@ -49,6 +49,14 @@ module.exports = {
 
             },
             {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.txt$/,
+                loader: 'raw-loader'
+            },
+            {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader' +
                 '?name=fonts/[name].[hash:5].[ext]'

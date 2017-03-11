@@ -5,17 +5,15 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './header.css';
-import text from './text';
+import {header as text} from '../data/text';
 
-const Header = (structure) => (
+const Header = () => (
 <div>
-    <h1 className={styles.header}>{text.Header.title}</h1>
+    <h1 className={styles.header}>{text.title}</h1>
 </div>
 );
 
-const mapStateToProps = state => ({
-    structure: state
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators({}, dispatch)

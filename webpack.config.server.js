@@ -1,49 +1,66 @@
 var webpack = require('webpack');
 var path = require('path');
-var fs = require('fs');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var postcssImport = require('postcss-import');
+var postcssCssnext =require('postcss-cssnext');
+var SourceMapDevToolPlugin = require('webpack').SourceMapDevToolPlugin;
+var AssetsPlugin = require('assets-webpack-plugin');
 
 var DIST_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname, 'src');
 
-var appConfig = require(path.resolve(SRC_DIR, 'orchestration/config'));
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var nodeModules = {};
-fs.readdirSync('node_modules')
-    .filter(function(x) {
-        return ['.bin'].indexOf(x) === -1;
-    })
-    .forEach(function(mod) {
-        nodeModules[mod] = 'commonjs ' + mod;
-    });
-
-var config = {
-    devtool: 'sourcemap',
+module.exports = {
+    context: SRC_DIR,
     entry: path.resolve(SRC_DIR, 'server.js'),
-    externals: /^[a-z\-0-9]+$/,
+
     output: {
-        path: path.resolve(DIST_DIR),
         filename: 'server.js',
-        libraryTarget: 'commonjs'
+        chunkFilename: 'server.[name].js',
+        libraryTarget: 'commonjs2',
+        path: DIST_DIR,
+        publicPath: '/dist/'
     },
-    module : {
-        loaders : [
+
+    module: {
+        loaders: [
             {
-                test : /\.js?/,
-                include : SRC_DIR,
-                exclude: /node_modules/,
-                loader : 'babel'
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                query: {
+                    cacheDirectory: false,
+                    babelrc: true
+                }
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.txt$/,
+                loader: 'raw-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader/locals?modules=true' +
+                '&localIdentName=[hash:base64:10]' +
+                '!postcss'
             }
         ]
     },
-    plugins: [
-        new CopyWebpackPlugin([
-            // {output}/to/file.txt
-            { from: 'src/client/index.html', to: path.resolve(DIST_DIR, appConfig.build.indexHtmlLocation) },
-            { from: 'package.json', to: path.resolve(DIST_DIR, 'package.json') },
-        ])
-    ],
-    target: 'node'
-};
 
-module.exports = config;
+    postcss() {
+        return [
+            postcssImport(),
+            postcssCssnext()
+        ];
+    },
+
+    resolve: {
+        root: SRC_DIR,
+        modulesDirectories: ['node_modules']
+    },
+    target: "node",
+    devtool: 'source-map'
+};
