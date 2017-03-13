@@ -26,8 +26,20 @@ export const addSongFailed = () => {
     };
 }
 
-export default {
-    addSongRequested,
-    addSongSuccess,
-    addSongFailed
+export const rsvpRequested = () => {
+    return {
+        type: RSVP_REQUESTED
+    };
 };
+
+export const rsvpSuccess = () => {
+    return {
+        type: RSVP_SUCCESS
+    };
+}
+
+export const rsvpFailed = () => {
+    return {
+        type: RSVP_FAILED
+    };
+}

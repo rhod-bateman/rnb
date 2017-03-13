@@ -11,9 +11,16 @@ import styles from './rsvp.css';
 import Segment from '../segment/Segment';
 import {rsvp} from '../../data/text';
 
-const Rsvp = ({structure}) => (
+const Rsvp = () => (
     <Segment title={rsvp.title}>
-        <p>{rsvp.intro}</p>
+        <div className={styles.rsvpForm}>
+            <p>Please RSVP below by April 15th</p>
+            <div>
+            <div className={styles.rsvpYes} >Yes</div>
+            <div className={styles.rsvpNo} >No</div>
+            </div>
+        </div>
+
         <p>{rsvp.poison}</p>
         <p>{rsvp.poison2}</p>
         <p>{rsvp.kids1}</p>
@@ -23,10 +30,7 @@ const Rsvp = ({structure}) => (
 );
 
 const mapStateToProps = state => ({
-    structure: state.segments.rsvp,
-    code: "123",
-    names: "names go here",
-    option:"yes"
+    answer: state.rsvp.answer
 });
 
 const mapDispatchToProps = dispatch => ({

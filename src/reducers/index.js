@@ -5,10 +5,10 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
+    rsvp: {
+        answer: undefined,
+    },
     segments: {
-        rsvp: {
-            title: "RSVP",
-        },
         whereWhen: {
             title: "Where and When"
         },

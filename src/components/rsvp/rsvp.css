@@ -1,0 +1,24 @@
+@import '../base.css';
+
+.rsvpForm{
+
+}
+
+.rsvpOption {
+    width: 100px;
+    height:100px;
+    background-color: rgba(200,200,200,0.5);
+    border: 1px solid var(--pink);
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--purple);
+}
+
+.rsvpYes {
+    composes: rsvpOption;
+}
+
+.rsvpNo{
+    composes: rsvpOption;
+}
