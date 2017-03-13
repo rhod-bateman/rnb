@@ -13,7 +13,7 @@ export const header = {
 export const bigDay = {
     title: "The Big Day",
     intro: "We will wed in the woods in Rhod's parents' garden followed by a picnic on the lawn.",
-    invite: "Come and join us at mid-day on July 15th at"
+    timeLocation: "Come and join us at mid-day on July 15th at "
 };
 
 export const timetable = {

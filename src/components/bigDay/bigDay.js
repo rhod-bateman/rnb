@@ -8,12 +8,13 @@ import styles from './bigDay.css';
 import Segment from '../segment/Segment';
 import Map from './Map'
 import TimeTable from '../timetable/Timetable';
-import {bigDay as text, dressCode} from '../../data/text';
+import {bigDay as text, dressCode, address} from '../../data/text';
+import {googleMapsLink} from '../../data/data';
 
 const BigDay = () => (
     <Segment title={text.title}>
         <p>{text.intro}</p>
-        <p>{text.invite}</p>
+        <p>{text.timeLocation}<a href={googleMapsLink} target="_blank" rel="noopener noreferrer">{address}</a></p>
         <p>Dress Code: {dressCode}</p>
         <Map></Map>
         <TimeTable></TimeTable>

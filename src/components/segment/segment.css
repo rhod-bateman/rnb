@@ -1,7 +1,7 @@
 @import '../base.css';
 
 :root {
-    --segmentColour: #f8f8ff;
+    --segmentColour: var(--transparentWhite);
 }
 
 .container {
@@ -14,13 +14,15 @@
     align-content: center;
     padding: 7px 5px 0;
     font-family: var(--headingFont);
+    font-size: 1.5rem;
+    color: var(--green);
+    border-bottom: solid 1px var(--pink);
 }
 
 .contentBox{
-    border: solid 1px var(--segmentColour);
     width: 100%;
     align-content: center;
     padding: 5px;
     font-family: var(--bodyFont);
-    font-size: 0.6rem;
+    font-size: 1rem;
 }

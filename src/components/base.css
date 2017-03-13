@@ -1,10 +1,19 @@
 @import './reset.css';
 
 :root {
-    --headingFont: fantasy,"Comic Sans MS", cursive, sans-serif;
-    --bodyFont: "Comic Sans MS", cursive, sans-serif;
+    --headingFont: "Mystery Quest", cursive, sans-serif;
+    --bodyFont: "Rancho", cursive, sans-serif;
+    --champagne: rgb(247, 231, 206);
+    --pink: rgb(255,105,180);
+    --purple: rgb(128,0,128);
+    --green: rgb(0,128,0);
+    --transparentWhite: rgba(255,255,255,0.5);
 }
 
 body {
     font-size: 1rem;
+    font-family: var(--bodyFont);
+    text-align:center;
+    background-color: rgb(255, 250, 240);
 }
+

@@ -9,10 +9,10 @@ import GettingHere from './gettingHere/GettingHere'
 import Music from './music/Music'
 import Food from './accomodation/Accomodation'
 import Gifts from './gifts/Gifts'
-import Rsvp from './rsvp/Rsvp'
+import Rsvp from './rsvp/Rsvp';
 
 const App = () => (
-<div>
+<div className={styles.appContainer}>
     <Header/>
     <BigDay/>
     <GettingHere/>

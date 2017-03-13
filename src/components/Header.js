@@ -9,6 +9,7 @@ import {header as text} from '../data/text';
 
 const Header = () => (
 <div>
+    <img src="./assets/background.jpg" className="{header.backgroundImage}" />
     <h1 className={styles.header}>{text.title}</h1>
 </div>
 );
