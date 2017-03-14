@@ -12,11 +12,14 @@ import {bigDay as text, dressCode, address} from '../../data/text';
 import {googleMapsLink} from '../../data/data';
 
 const BigDay = () => (
-    <Segment title={text.title}>
-        <p>{text.intro}</p>
-        <p>{text.timeLocation}<a href={googleMapsLink} target="_blank" rel="noopener noreferrer">{address}</a></p>
-        <p>Dress Code: {dressCode}</p>
-        <Map></Map>
+    <Segment title="The Big Day">
+        <section>
+            We will wed in the woods in Rhod's parents' garden followed by a picnic on the lawn.
+        </section>
+        <section>
+            Come and join us at mid-day on July 15th at <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">{address}</a>
+        </section>
+        <section>Dress Code: {dressCode}</section>
         <TimeTable></TimeTable>
     </Segment>
 );

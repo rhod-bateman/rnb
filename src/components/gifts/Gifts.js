@@ -12,10 +12,9 @@ import Segment from '../segment/Segment';
 
 const Food = ({structure}) => (
     <Segment title={structure.title}>
-        <p>After the ceremony we will providing a picnic.</p>
-        <p>In the evening there will be a hog roast.</p>
-        <p>If you have any allergies we should know about please let us know.</p>
-        <input type="text" placeholder="I am allergic to..."></input>
+        <section>
+            Coming soon...
+        </section>
     </Segment>
 );
 

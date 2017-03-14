@@ -5,12 +5,12 @@ import {
     addSongRequested, addSongFailed, addSongSuccess,
     rsvpRequested, rsvpSuccess, rsvpFailed
 } from './actions';
-import api from '../api'
+import {rsvpApi, addSongApi} from '../api'
 
 export const rsvp = answer =>
     (dispatch) => {
         dispatch(rsvpRequested());
-        return api.rsvp(answer)
+        return rsvpApi(answer)
             .then((result) => {
                 dispatch(rsvpSuccess());
             })
@@ -22,7 +22,7 @@ export const rsvp = answer =>
 export const addSong = name =>
     (dispatch) => {
         dispatch(actions.addSongRequested());
-        return api.addSong(name)
+        return addSongApi(name)
             .then((result) => {
                 dispatch(addSongSuccess());
             })

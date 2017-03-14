@@ -12,8 +12,8 @@ import actionCreator from '../../actions/actionCreator';
 import {accomodation} from '../../data/text';
 
 const Accomodation = ({}) => (
-    <Segment title={accomodation.title}>
-        <p>{accomodation.intro}</p>
+    <Segment title="Where can I stay?">
+        <p>Coming soon...</p>
     </Segment>
 );
 

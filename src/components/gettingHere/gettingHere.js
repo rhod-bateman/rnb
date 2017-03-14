@@ -6,13 +6,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './gettingHere';
 import Segment from '../segment/Segment';
-import TimeTable from '../timetable/Timetable';
 import { gettingHere } from '../../data/text';
 
 const BigDay = () => (
-    <Segment title={gettingHere.title}>
-        <p>{gettingHere.intro}</p>
-        <p>{gettingHere.taxi}</p>
+    <Segment title="Getting Here">
+        <section>
+            <p>Parking is limited but the house is a short taxi ride from Guildford station.</p>
+            <p>Show your taxi driver this map so he can find us.</p>
+        </section>
     </Segment>
 );
 

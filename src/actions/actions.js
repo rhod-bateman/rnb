@@ -6,6 +6,10 @@ export const ADD_SONG_REQUESTED = "ADD_SONG_REQUESTED";
 export const ADD_SONG_SUCCESS = "ADD_SONG_SUCCESS";
 export const ADD_SONG_FAILED = "ADD_SONG_FAILED";
 
+export const RSVP_REQUESTED = "RSVP_REQUESTED";
+export const RSVP_SUCCESS = "RSVP_SUCCESS";
+export const RSVP_FAILED = "RSVP_FAILED";
+
 export const ADD_ALLERGY = "ADD_ALLERGY";
 
 export const addSongRequested = () => {

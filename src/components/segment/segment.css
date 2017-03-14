@@ -1,28 +1,43 @@
 @import '../base.css';
 
 :root {
+    --headerBackground: rgba(231, 257, 231, 0.4);
+    --contentBackground: var(--transparentWhite);
     --segmentColour: var(--transparentWhite);
+    --height: 50px;
 }
 
 .container {
     margin: 1px auto;
 }
 
+.paragraph {
+    margin: 10px;
+}
+
 .header{
-    background-color: var(--segmentColour);
+    background-color: var(--headerBackground);
     width: 100%;
+    height: var(--height);
+    line-height: var(--height);
     align-content: center;
     padding: 7px 5px 0;
     font-family: var(--headingFont);
     font-size: 1.5rem;
     color: var(--green);
     border-bottom: solid 1px var(--pink);
+    font-weight:bold;
 }
 
 .contentBox{
     width: 100%;
     align-content: center;
-    padding: 5px;
+    padding: 1rem;
     font-family: var(--bodyFont);
     font-size: 1rem;
+    color: var(--green);
+    background-color: var(--contentBackground);
+    border-bottom: solid 1px var(--pink);
 }
+
+

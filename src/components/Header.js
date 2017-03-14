@@ -6,10 +6,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './header.css';
 import {header as text} from '../data/text';
+import backgroundImage from '../assets/headerBackground.jpg';
 
 const Header = () => (
 <div>
-    <img src="./assets/background.jpg" className="{header.backgroundImage}" />
+    <img src={backgroundImage} className={styles.backgroundImage} />
     <h1 className={styles.header}>{text.title}</h1>
 </div>
 );

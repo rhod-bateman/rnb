@@ -8,24 +8,30 @@ import http from 'http';
 import bodyParser from 'body-parser';
 import path from 'path';
 
-import homeRoute from './routes/home';
-import serverRender from './orchestration/serverRender';
+import serverRender from './serverRender/index';
 
 
 const app = express();
 app.disable('x-powered-by');
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session());
+app.use(bodyParser.json());
 
 // Allow access to bundle.
 app.use('/static', express.static(path.resolve(config.build.staticDir)));
 
+
 app.use('/', (req, res, next) => {
 
-    let html = serverRender({});
-    res.send(html);
+     let html = serverRender({});
+     res.send(html);
     next();
 });
+
+app.post('/rsvp', (req, res, next) => {
+    res.status(200);
+    res.json({success: true});
+});
+
 
 const options = {};
 

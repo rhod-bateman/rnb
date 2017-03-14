@@ -1,12 +1,16 @@
 @import '../base.css';
 
+:root {
+    --rsvpButtonHeight: 100px;
+}
 .rsvpForm{
 
 }
 
 .rsvpOption {
     width: 100px;
-    height:100px;
+    height: var(--rsvpButtonHeight);
+    line-height: var(--rsvpButtonHeight);
     background-color: rgba(200,200,200,0.5);
     border: 1px solid var(--pink);
     display: inline-block;

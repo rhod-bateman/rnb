@@ -7,13 +7,17 @@
     --pink: rgb(255,105,180);
     --purple: rgb(128,0,128);
     --green: rgb(0,128,0);
-    --transparentWhite: rgba(255,255,255,0.5);
+    --transparentWhite: rgba(255,255,255,0.7);
+    --reallyTransparentWhite: rgba(255,255,255,0.4);
 }
 
 body {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: var(--bodyFont);
     text-align:center;
     background-color: rgb(255, 250, 240);
 }
 
+section {
+    margin: 1rem;
+}

@@ -3,14 +3,14 @@
  */
 
 
-export const addSong = (name) => {
+export const addSongApi = (name) => {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, 100);
     });
 }
 
 
-export const rsvp = (answer) => {
+export const rsvpApi = (answer) => {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, 100);
     });
