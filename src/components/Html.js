@@ -13,7 +13,7 @@ const Html = ({ bundle, children, title, state, css }) => (
             <link href={css} rel="stylesheet"/>
         </head>
         <body>
-            <div id="app" >
+            <div id="root" >
                 {children}
             </div>
             <script type="text/javascript" src={bundle} />
