@@ -4,13 +4,10 @@ var webpack = require('webpack');
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var postcssImport = require('postcss-import');
-var postcssCssnext =require('postcss-cssnext');
 var SourceMapDevToolPlugin = require('webpack').SourceMapDevToolPlugin;
 var AssetsPlugin = require('assets-webpack-plugin');
 var baseConfig = require('./webpack.config.base');
 
-// var nodeExternals = require('webpack-node-externals');
 var DIST_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname, 'src');
 
@@ -19,14 +16,11 @@ module.exports = {
     context: SRC_DIR,
     entry: path.resolve(SRC_DIR, 'server.js'),
 
-    //externals: [nodeExternals()],
     output: {
         filename: 'dist/server.js',
         chunkFilename: 'server.[name].js',
-        libraryTarget: 'commonjs2'
-
-        /*path: path.resolve(DIST_DIR, '/serverRender'),
-        publicPath: path.resolve(DIST_DIR, '/serverRender')*/
+        libraryTarget: 'commonjs2',
+        publicPath: '/static/'
     },
 
     module: {

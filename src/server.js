@@ -19,6 +19,9 @@ app.use(bodyParser.json());
 // Allow access to bundle.
 app.use('/static', express.static(path.resolve(config.build.staticDir)));
 
+// Temporary fix for a build issue
+app.use('/images', express.static(path.resolve(config.build.staticDir, 'images')));
+
 
 app.get('/', (req, res, next) => {
 
