@@ -5,7 +5,7 @@
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { renderToString } from 'react-dom/server';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import AppComponent from '../components/App';
 import reducer from '../reducers/index';
 import config from '../config';
@@ -26,18 +26,22 @@ const handleRender = (state) => {
         state*/
     );
 
+    const content = renderToString(
+        <Provider store={store}>
+            <AppComponent />
+        </Provider>);
+
+
     let stateString = JSON.stringify(store.getState());
 
     // Render the component to a string
-    const html = renderToString(
+    const html = renderToStaticMarkup(
         <Html bundle={config.app.bundleName} title={config.app.title} state={stateString} css={config.app.css}>
-            <Provider store={store}>
-                <AppComponent />
-            </Provider>
+            {content}
         </Html>
     );
 
-    return html;
+    return `<!DOCTYPE html>${html}`;
 };
 
 export default handleRender;

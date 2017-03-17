@@ -13,21 +13,21 @@ import serverRender from './serverRender/index';
 
 const app = express();
 app.disable('x-powered-by');
-app.use(session());
+app.use(session({ secret: 'secret'}));
 app.use(bodyParser.json());
 
 // Allow access to bundle.
 app.use('/static', express.static(path.resolve(config.build.staticDir)));
 
 
-app.use('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
 
      let html = serverRender({});
      res.send(html);
     next();
 });
 
-app.post('/rsvp', (req, res, next) => {
+app.get('/rsvp', (req, res, next) => {
     res.status(200);
     res.json({success: true});
 });

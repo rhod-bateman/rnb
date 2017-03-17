@@ -8,62 +8,38 @@ var postcssImport = require('postcss-import');
 var postcssCssnext =require('postcss-cssnext');
 var SourceMapDevToolPlugin = require('webpack').SourceMapDevToolPlugin;
 var AssetsPlugin = require('assets-webpack-plugin');
+var baseConfig = require('./webpack.config.base');
 
 // var nodeExternals = require('webpack-node-externals');
 var DIST_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname, 'src');
 
+
 module.exports = {
     context: SRC_DIR,
-    entry: path.resolve(SRC_DIR, 'serverRender/index.js'),
+    entry: path.resolve(SRC_DIR, 'server.js'),
 
-    externals: [nodeExternals()],
+    //externals: [nodeExternals()],
     output: {
-        filename: 'index.js',
+        filename: 'dist/server.js',
         chunkFilename: 'server.[name].js',
-        libraryTarget: 'commonjs2',
-        path: path.resolve(DIST_DIR, '/serverRender'),
-        publicPath: path.resolve(DIST_DIR, '/serverRender')
+        libraryTarget: 'commonjs2'
+
+        /*path: path.resolve(DIST_DIR, '/serverRender'),
+        publicPath: path.resolve(DIST_DIR, '/serverRender')*/
     },
 
     module: {
         loaders: [
-            {
-                test: /\.jsx?$/,
-                loader: 'babel-loader',
-                query: {
-                    cacheDirectory: false,
-                    babelrc: true
-                }
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
-            },
-            {
-                test: /\.txt$/,
-                loader: 'raw-loader'
-            },
-            {
-                test: /\.css$/,
-                loader: 'css-loader/locals?modules=true' +
-                '&localIdentName=[hash:base64:10]' +
-                '!postcss'
-            },
-            {
-                test: /\.(png|jpg|svg)$/,
-                loader: 'file-loader' +
-                '?name=images/[name].[hash:5].[ext]'
-            }
+            baseConfig.babelLoader,
+            baseConfig.jsonLoader,
+            baseConfig.txtLoader,
+            baseConfig.css.loader.server.prod,
+            baseConfig.asset.server.image
         ]
     },
 
-    postcss() {
-        return [
-            postcssImport(),
-            postcssCssnext()
-        ];
-    },
+    postcss: baseConfig.css.postcss,
 
     resolve: {
         root: SRC_DIR,

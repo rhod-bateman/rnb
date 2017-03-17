@@ -97,6 +97,7 @@
     "style-loader": "^0.13.1",
     "stylelint-config-ukweb": "git+https://github.kdc.capitalone.com/UKWeb/stylelint-config-ukweb.git#v0.0.2",
     "webpack": "1.13.2",
+      "webpack-bundle-analyzer": "2.3.0",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-dev-server": "^1.16.1",
     "webpack-hot-middleware": "^2.12.2",

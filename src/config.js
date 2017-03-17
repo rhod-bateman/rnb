@@ -9,10 +9,10 @@ var config = {
         css:"./static/client.css"
     },
     "server":{
-        "port": process.env.PORT || 8001,
+        "port": process.env.PORT || 8080,
     },
     "build": {
-        "staticDir":"./dist/static",
+        "staticDir":"./static",
     },
     "aws":{
         "role":"arn:aws:iam::362995553964:role/rnbRole",
