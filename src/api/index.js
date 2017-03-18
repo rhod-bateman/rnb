@@ -1,6 +1,7 @@
 /**
  * Created by qtj929 on 27/02/2017.
  */
+import { post }  from './api';
 
 
 export const addSongApi = (name) => {
@@ -11,7 +12,5 @@ export const addSongApi = (name) => {
 
 
 export const rsvpApi = (answer) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, 100);
-    });
+    return post({uri: '/rsvp'}, {answer: answer});
 }

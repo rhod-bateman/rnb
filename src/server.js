@@ -3,7 +3,7 @@
  */
 import express from 'express';
 import session from 'express-session';
-import config from './config';
+import config from './config/config';
 import http from 'http';
 import bodyParser from 'body-parser';
 import path from 'path';

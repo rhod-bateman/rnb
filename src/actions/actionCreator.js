@@ -17,7 +17,7 @@ export const rsvp = answer =>
             .catch((result) => {
                 dispatch(rsvpFailed());
             });
-    }
+    };
 
 export const addSong = name =>
     (dispatch) => {

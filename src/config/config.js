@@ -10,6 +10,7 @@ var config = {
     },
     "server":{
         "port": process.env.PORT || 8080,
+        timeout: 100000
     },
     "build": {
         "staticDir":"./static",
