@@ -2,7 +2,7 @@
  * Created by qtj929 on 20/12/2016.
  */
 
-import serverRender from '../serverRender/index';
+import serverRender from '../server/index';
 
 
 const config = (app) => {

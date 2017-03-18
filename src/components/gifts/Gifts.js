@@ -10,8 +10,8 @@ import { connect } from 'react-redux';
 import styles from './gifts.css';
 import Segment from '../segment/Segment';
 
-const Food = ({structure}) => (
-    <Segment title={structure.title}>
+const Gifts = () => (
+    <Segment title="Gifts">
         <section>
             Coming soon...
         </section>
@@ -19,7 +19,7 @@ const Food = ({structure}) => (
 );
 
 const mapStateToProps = state => ({
-    structure: state.segments.gifts
+
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Food);
+)(Gifts);
 
 
 

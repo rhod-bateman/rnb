@@ -8,7 +8,7 @@ import http from 'http';
 import bodyParser from 'body-parser';
 import path from 'path';
 
-import serverRender from './serverRender/index';
+import serverRender from './server/index';
 
 
 const app = express();
@@ -30,7 +30,12 @@ app.get('/', (req, res, next) => {
     next();
 });
 
-app.get('/rsvp', (req, res, next) => {
+app.post('/rsvp', (req, res, next) => {
+    res.status(200);
+    res.json({success: true});
+});
+
+app.post('/addSong', (req, res, next) => {
     res.status(200);
     res.json({success: true});
 });

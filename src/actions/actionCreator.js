@@ -12,19 +12,19 @@ export const rsvp = answer =>
         dispatch(rsvpRequested());
         return rsvpApi(answer)
             .then((result) => {
-                dispatch(rsvpSuccess());
+                dispatch(rsvpSuccess(answer));
             })
             .catch((result) => {
                 dispatch(rsvpFailed());
             });
     };
 
-export const addSong = name =>
+export const addSong = song =>
     (dispatch) => {
-        dispatch(actions.addSongRequested());
-        return addSongApi(name)
+        dispatch(addSongRequested());
+        return addSongApi(song)
             .then((result) => {
-                dispatch(addSongSuccess());
+                dispatch(addSongSuccess(song));
             })
             .catch((result) => {
                 dispatch(addSongFailed());

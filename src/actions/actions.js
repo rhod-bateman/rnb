@@ -18,9 +18,10 @@ export const addSongRequested = () => {
     };
 };
 
-export const addSongSuccess = () => {
+export const addSongSuccess = (song) => {
     return {
-        type: ADD_SONG_SUCCESS
+        type: ADD_SONG_SUCCESS,
+        song: song
     };
 }
 
@@ -36,9 +37,10 @@ export const rsvpRequested = () => {
     };
 };
 
-export const rsvpSuccess = () => {
+export const rsvpSuccess = (answer) => {
     return {
-        type: RSVP_SUCCESS
+        type: RSVP_SUCCESS,
+        answer: answer
     };
 }
 

@@ -4,13 +4,11 @@
 import { post }  from './api';
 
 
-export const addSongApi = (name) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, 100);
-    });
+export const addSongApi = (song) => {
+    return post({uri: '/addSong'}, {song: song});
 }
 
 
 export const rsvpApi = (answer) => {
     return post({uri: '/rsvp'}, {answer: answer});
-}
+};
