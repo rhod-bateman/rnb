@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './bigDay.css';
 import Segment from '../segment/Segment';
-import Map from './Map'
 import TimeTable from '../timetable/Timetable';
 import {bigDay as text, dressCode, address} from '../../data/text';
 import {googleMapsLink} from '../../data/data';

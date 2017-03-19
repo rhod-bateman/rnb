@@ -6,16 +6,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './timetable.css';
 import Segment from '../segment/Segment';
-import {timetable} from '../../data/text';
+import {timetable} from '../../data/data';
 
 
-const listItems = Object.keys(timetable.items).map((key) =>
-    <li>{key}:{timetable.items[key]}</li>
+const listItems = Object.keys(timetable).map((key) =>
+    <li>{key} - {timetable[key]}</li>
 );
 
 const TimeTable = () => (
     <div>
-        <h3 >{timetable.title}</h3>
+        <h3 >Our plan for the day</h3>
         <ol>{ listItems }</ol>
     </div>
 );

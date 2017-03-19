@@ -21,9 +21,9 @@
     height: var(--height);
     line-height: var(--height);
     align-content: center;
-    padding: 7px 5px 0;
+    padding: 7px 0;
     font-family: var(--headingFont);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--green);
     border-bottom: solid 1px var(--pink);
     font-weight:bold;
@@ -32,9 +32,9 @@
 .contentBox{
     width: 100%;
     align-content: center;
-    padding: 1rem;
+    padding: 1rem 0;
     font-family: var(--bodyFont);
-    font-size: 1rem;
+    font-size: 1em;
     color: var(--green);
     background-color: var(--contentBackground);
     border-bottom: solid 1px var(--pink);

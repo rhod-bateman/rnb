@@ -10,13 +10,6 @@ export const header = {
     title: "Rhod and Beths Picnic Nuptuals"
 };
 
-export const timetable = {
-    title: "Our Timetable",
-    items: {
-        "12:00":"please arrive"
-    }
-};
-
 export const music = {
     title:"Getting your groove on",
     p1: "A live band will be entertaining us for most of the evening.",

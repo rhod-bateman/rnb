@@ -86,7 +86,7 @@ module.exports = {
                 // info.resourcePath gives a nicer string for .js files mapping to other assets, e.g. images
                 const resourcePath = match ? info.identifier.replace(match, '') : info.resourcePath;
 
-                return `webpack://ukweb/${resourcePath}`;
+                return `webpack://rnb/${resourcePath}`;
             }
         })
     ],

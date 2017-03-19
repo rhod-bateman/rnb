@@ -17,7 +17,6 @@ const Option = ({onClick, buttonStyle, buttonText}) => (
 );
 
 const Confirmation = (coming) => {
-    debugger;
     if (coming) {
         return <p> Look forward to seeing you there! </p>
     } else {
@@ -25,22 +24,27 @@ const Confirmation = (coming) => {
     }
 };
 
-const Rsvp = ({answer, inProgress, status, rsvpYes, rsvpNo, }) => {
+const rsvpForm = (rsvpYes, rsvpNo) => {
+    return (
+    <div className={styles.paragraph}>
+        <Option buttonStyle={styles.rsvpYes} onClick={rsvpYes} buttonText="Yes"/>
+        <Option buttonStyle={styles.rsvpNo} onClick={rsvpNo} buttonText="No"/>
+    </div>);
+    /*{
+        !!inProgress && <p>Saving...</p>
+    }
+    {
+        !!failed && <p>Something went wrong.</p>
+    });*/
+}
+
+const Rsvp = ({answer, inProgress, status, rsvpYes, rsvpNo}) => {
     let failed = status == 'failed';
 
     let html = (<Segment title="RSVP">
         { !answer && <section className={styles.rsvpForm}>
-            <p>Please RSVP below by April 15th</p>
-            <div className={styles.paragraph}>
-                <Option buttonStyle={styles.rsvpYes} onClick={rsvpYes} buttonText="Yes"/>
-                <Option buttonStyle={styles.rsvpNo} onClick={rsvpNo} buttonText="No"/>
-            </div>
-            {
-                !!inProgress && <p>Saving...</p>
-            }
-            {
-                !!failed && <p>Something went wrong.</p>
-            }
+            <p>Please RSVP by April 15th to bethandrhod@gmail.com</p>
+            {false && rsvpForm(rsvpYes, rsvpNo)}
         </section>}
 
         {
@@ -58,8 +62,8 @@ const Rsvp = ({answer, inProgress, status, rsvpYes, rsvpNo, }) => {
 
         <section >
             <p>We have opted for a kid-free wedding to indulge our penchant for TenaciousD and stories about bad
-                judgement.
-                And more practically because we just dont have the space.</p>
+                judgement.</p>
+            <p>And more practically because we just dont have the space.</p>
             <p>We will obviously make an exception for recent arrivals who cannot be left but please let us know in
                 advance if you need to bring them.</p>
         </section>

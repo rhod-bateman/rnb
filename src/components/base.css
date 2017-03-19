@@ -1,7 +1,7 @@
 @import './reset.css';
 
 :root {
-    --headingFont: "Mystery Quest", cursive, sans-serif;
+    --headingFont: "Mystery Quest script=latin rev=2", cursive, sans-serif;
     --bodyFont: "Rancho", cursive, sans-serif;
     --champagne: rgb(247, 231, 206);
     --pink: rgb(255,105,180);
@@ -12,11 +12,12 @@
 }
 
 body {
-    font-size: 1.2rem;
+    font-size: 1.33em;
     font-family: var(--bodyFont);
     text-align:center;
     background-color: rgb(255, 250, 240);
 }
+
 
 section {
     margin: 1rem;
