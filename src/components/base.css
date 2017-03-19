@@ -15,10 +15,11 @@ body {
     font-size: 1.33em;
     font-family: var(--bodyFont);
     text-align:center;
+    line-height: 1.5em;
     background-color: rgb(255, 250, 240);
 }
 
 
 section {
-    margin: 1rem;
+    margin: 1em;
 }
