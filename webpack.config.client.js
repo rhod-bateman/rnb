@@ -1,3 +1,6 @@
+/**
+ * Created by qtj929 on 19/03/2017.
+ */
 var webpack = require('webpack');
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -17,7 +20,7 @@ module.exports = {
         html: './src/index.html'
     },
     output: {
-        path: './dist/static',
+        path: './dist/static/',
         filename: "client.js"
     },
     module: {
@@ -52,7 +55,16 @@ module.exports = {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader' +
                 '?name=fonts/[name].[hash:5].[ext]'
-            }
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.txt$/,
+                loader: 'raw-loader'
+            },
+
         ]
     },
     plugins: [
