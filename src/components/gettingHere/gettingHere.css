@@ -1,0 +1,14 @@
+
+:root{
+    --mapHeight: 400px;
+}
+.map{
+    min-width:400px;
+    max-width: 800px;
+    height:var(--mapHeight);
+    margin:auto;
+}
+
+.map div{
+    height:var(--mapHeight)
+}
