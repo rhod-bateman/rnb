@@ -8,3 +8,20 @@
     min-width: 400px;
     margin: auto;
 }
+
+.backgroundImage {
+    width: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+
+.header {
+    font-family: var(--headingFont);
+    font-size: 1.8em;
+    color: var(--green);
+    margin: 3em auto;
+}

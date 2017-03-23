@@ -1,0 +1,8 @@
+
+.loading {
+    opacity: 0 !important;
+}
+
+.opacityTransition {
+    transition: opacity 3s;
+}

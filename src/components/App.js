@@ -3,17 +3,20 @@
  */
 import React, { PropTypes } from 'react';
 import styles from './app.css';
-import Header from './Header'
 import BigDay from './bigDay/bigDay'
 import GettingHere from './gettingHere/GettingHere'
 import Music from './music/Music'
 import Food from './accomodation/Accomodation'
 import Gifts from './gifts/Gifts'
 import Rsvp from './rsvp/Rsvp';
+import Image from './image/index';
+import backgroundImage from  '../assets/headerBackground.jpg';
+
 
 const App = () => (
 <div className={styles.appContainer}>
-    <Header/>
+    <Image className={styles.backgroundImage} src={backgroundImage}/>
+    <h1 className={styles.header}>Beth and Rhods Picnic Nuptuals</h1>
     <BigDay/>
     <GettingHere/>
     <Rsvp/>

@@ -15,7 +15,7 @@ class Segment extends React.Component {
     }
 
     toggleVisible() {
-        let visible = this.state.contentVisible
+        let visible = this.state.contentVisible;
         this.setState({contentVisible: !visible});
     }
 
