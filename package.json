@@ -2,7 +2,7 @@
   "name": "rnb",
   "version": "0.0.1",
   "description": "beth and rhods website",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "webpack",
     "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --history-api-fallback",
