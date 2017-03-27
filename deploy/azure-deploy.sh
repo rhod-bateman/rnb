@@ -105,7 +105,7 @@ selectNodeVersion
 # 2. Install prod npm packages
 if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
-  echo "start npm install"
+  echo "start npm install prod"
   eval $NPM_CMD install
   exitWithMessageOnError "npm install failed"
   cd - > /dev/null
@@ -116,7 +116,7 @@ if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
   echo "start npm install"
   eval $NPM_CMD install --only=dev
-  exitWithMessageOnError "npm install-dev failed"
+  # exitWithMessageOnError "npm install-dev failed"
   cd - > /dev/null
 fi
 
@@ -125,7 +125,7 @@ if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"  
   echo "start npm run build"
   eval $NPM_CMD run build
-  exitWithMessageOnError "npm build failed"
+  #exitWithMessageOnError "npm build failed"
   cd - > /dev/null
 fi
 
