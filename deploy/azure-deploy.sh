@@ -105,14 +105,16 @@ selectNodeVersion
 # 2. Install npm packages
 if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
-  eval $NPM_CMD install
+  echo "start npm install"
+  eval $NPM_CMD install --dev
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
 
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
-  cd "$DEPLOYMENT_SOURCE"
+  cd "$DEPLOYMENT_SOURCE"  
+  echo "start npm run build"
   eval $NPM_CMD run build
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
