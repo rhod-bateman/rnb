@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack",
+    "start":"./dist/server.js",
     "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --history-api-fallback",
     "clean": "rimraf dist",
     "lint": "esw src",
