@@ -102,21 +102,21 @@ echo Handling node.js deployment.
 # 1. Select node version
 selectNodeVersion
 
-# 2. Install prod npm packages
-if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
-  cd "$DEPLOYMENT_SOURCE"
-  echo "start npm install prod"
-  eval $NPM_CMD install
-  exitWithMessageOnError "npm install failed"
-  cd - > /dev/null
-fi
-
-# 3. Install dev npm packages
+# 2. Install dev npm packages
 if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
   echo "start npm install dev"
   eval $NPM_CMD install --only=dev
   # exitWithMessageOnError "npm install-dev failed"
+  cd - > /dev/null
+fi
+
+# 3. Install prod npm packages
+if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
+  cd "$DEPLOYMENT_SOURCE"
+  echo "start npm install prod"
+  eval $NPM_CMD install
+  exitWithMessageOnError "npm install failed"
   cd - > /dev/null
 fi
 
@@ -130,10 +130,30 @@ if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
 fi
 
 # 5. KuduSync
-if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
-  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
-  exitWithMessageOnError "Kudu Sync failed"
-fi
+#if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
+#  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
+#  exitWithMessageOnError "Kudu Sync failed"
+#fi
+
+:: 5. Do KuduSync BEFORE INSTALLING PRODUCTION DEPENDANCIES
+echo ======= Kudu Syncing: Starting at %TIME% ======= 
+IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
+  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%/dist;%DEPLOYMENT_SOURCE%/package.json" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.vscode;node_modules;src;deploy;typings;.bowerrc;.deployment;.gitignore;bower.json;webpack.config.*;deploy.cmd;gulpfile.js;tsconfig.json;tsd.json;.hg;.deployment;deploy.cmd;*.xml;*.yml"
+  IF !ERRORLEVEL! NEQ 0 goto error
+  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%/package.json" -t "%DEPLOYMENT_TARGET%"
+  IF !ERRORLEVEL! NEQ 0 goto error
+)
+echo ======= Kudu Syncing: Finished at %TIME% =======
+
+:: 6. Install npm packages at DEPLOYMENT_TARGET 
+echo =======  Installing npm packages: Starting at %TIME% ======= 
+IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
+  pushd "%DEPLOYMENT_TARGET%"
+  call :ExecuteCmd !NPM_CMD! install --production
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
+)
+echo =======  Installing npm packages: Finished at %TIME% =======
 
 ##################################################################################################################################
 echo "Finished successfully."
