@@ -4,8 +4,7 @@
   "description": "beth and rhods website",
   "main": "dist/server.js",
   "scripts": {
-    "start":"node dist/server.js",
-      "dev": "webpack",
+    "dev": "webpack",
     "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --history-api-fallback",
     "clean": "rimraf dist",
     "lint": "esw src",
