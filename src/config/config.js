@@ -22,6 +22,15 @@ var config = {
             "rsvpTopic":"arn:aws:sns:eu-west-2:362995553964:rnb-rsvp",
         }    ,
         "region":"eu-west-2"
+    },
+    "googleMaps":{
+        "apiKey":"AIzaSyCQO_WHOMY5mPJ8JAfpLdNwwUcwIC1BkS8"
+    },
+    "documentDB": {
+        host: process.env.HOST || "https://bethandrhod.documents.azure.com:443/",
+        authKey: process.env.AUTH_KEY || "fMG3sjDryaLscRWVjLPRbucEtAoTafI4lOSpVUfQHMvEGODZUnVoX71IRBTqwLtlNtPTmnL9GtpczgQ8Q7OTUA==",
+        databaseId: "ToDoList",
+        collectionId: "Items"
     }
 };
 
