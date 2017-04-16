@@ -2,7 +2,7 @@
  * Created by qtj929 on 17/03/2017.
  */
 import axios from 'axios';
-import config from '../config/config'
+import config from '../config/server.config'
 
 /*
 export const api = (config) => {

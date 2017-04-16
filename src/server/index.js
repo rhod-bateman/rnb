@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import AppComponent from '../components/App';
 import reducer from '../reducers/index';
-import config from '../config/config';
+import config from '../config/server.config';
 import Html from '../components/Html'
 import thunk from 'redux-thunk'
 
