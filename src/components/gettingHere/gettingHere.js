@@ -17,7 +17,7 @@ const BigDay = () => (
         </section>
         <div className={styles.map}>
             <Map center={[51.210111, -0.516389]} zoom={11}>
-                <Marker lat={51.210111} lng={-0.516389}>here</Marker>
+                <Marker lat={51.2104979} lng={-0.517000}><div className={styles.parking}>W</div></Marker>
                 <Marker lat={51.2057962} lng={-0.518342} ><div className={styles.parking}>P</div></Marker>
                 <Marker lat={51.2062943} lng={-0.521292} ><div className={styles.parking}>P</div></Marker>
             </Map>
