@@ -12,3 +12,8 @@
 .map div{
     height:var(--mapHeight)
 }
+
+.parking {
+    font-size: 2em;
+    color: fuchsia;
+}

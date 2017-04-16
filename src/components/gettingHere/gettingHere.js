@@ -9,7 +9,6 @@ import styles from './gettingHere.css';
 import {googleMapsLink} from '../../data/data';
 import {Map, Marker} from '../map/map';
 
-
 const BigDay = () => (
     <Segment title="Getting Here">
         <section>
@@ -19,6 +18,8 @@ const BigDay = () => (
         <div className={styles.map}>
             <Map center={[51.210111, -0.516389]} zoom={11}>
                 <Marker lat={51.210111} lng={-0.516389}>here</Marker>
+                <Marker lat={51.2057962} lng={-0.518342} ><div className={styles.parking}>P</div></Marker>
+                <Marker lat={51.2062943} lng={-0.521292} ><div className={styles.parking}>P</div></Marker>
             </Map>
         </div>
     </Segment>
