@@ -3,13 +3,7 @@
  */
 import fs from 'fs';
 
-
-const loadData = () => {
-
-}
-
-
-export const addSong (song) => {
+export const addSong = (song) => {
 
 
 }

@@ -10,8 +10,17 @@ import AppComponent from '../components/App';
 import reducer from '../reducers/index';
 import config from '../config/server.config';
 import Html from '../components/Html'
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import {songs} from '../data/data';
 
+const serverSideRender = () => {
+    var preloadedState = {
+        songs: songs
+    };
+    console.log('preLoad state=', preloadedState);
+
+    return handleRender(preloadedState);
+};
 
 /**
  * Handles the initial server-side render
@@ -21,9 +30,8 @@ import thunk from 'redux-thunk'
 const handleRender = (state) => {
     // Create a new Redux store instance
     const store = createStore(
-        reducer/*,
-        applyMiddleware([thunk]),
-        state*/
+        reducer,
+        state
     );
 
     const content = renderToString(
@@ -44,4 +52,4 @@ const handleRender = (state) => {
     return `<!DOCTYPE html>${html}`;
 };
 
-export default handleRender;
+export default serverSideRender;

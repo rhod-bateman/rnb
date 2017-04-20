@@ -18,7 +18,8 @@
     "aws-bundle": "cd dist && zip -r ../rnb.zip * && cd ..",
     "test": "mocha",
     "prebuild": "rimraf dist",
-    "build-dev-server": "rimraf dist && babel ./src/ --out-file ./dist/"
+    "build-dev-server": "rimraf dist && babel ./src/ --out-file ./dist/",
+      "server-dev-build": "babel src -s -D -d dist"
   },
   "repository": {
     "type": "git",
