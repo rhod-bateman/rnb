@@ -9,7 +9,7 @@ const Html = ({ bundle, children, title, state, css }) => (
             <meta charSet="utf-8" />
             {title && <title>{title}</title>}
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link href="https://fonts.googleapis.com/css?family=MysteryQuest|Rancho" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css?family=Mystery Quest|Rancho" rel="stylesheet"/>
             <link href={css} rel="stylesheet"/>
         </head>
         <body>
