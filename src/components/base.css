@@ -2,6 +2,7 @@
 
 :root {
     --headingFont: "Mystery Quest", cursive, sans-serif;
+    --headingColour: rgba(255, 255, 255, 0.6);
     --bodyFont: "Rancho", cursive, sans-serif;
     --champagne: rgb(247, 231, 206);
     --pink: rgb(255,105,180);
@@ -11,12 +12,17 @@
     --reallyTransparentWhite: rgba(255,255,255,0.4);
 }
 
+html {
+    background-color: var(--baseBackgroundColour);
+}
+
 body {
     font-size: 1.33em;
     font-family: var(--bodyFont);
     text-align:center;
     line-height: 1.5em;
-    background-color: rgb(255, 250, 240);
+    max-height: 1440px;
+    background-color: transparent;
 }
 
 
