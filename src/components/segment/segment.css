@@ -1,7 +1,7 @@
 @import '../base.css';
 
 :root {
-    --headerBackground: rgba(231, 257, 231, 0.4);
+    --headerBackground: rgba(245, 245, 255, 0.4);
     --contentBackground: var(--transparentWhite);
     --segmentColour: var(--transparentWhite);
     --height: 50px;
