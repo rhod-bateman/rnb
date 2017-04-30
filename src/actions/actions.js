@@ -9,6 +9,7 @@ export const ADD_SONG_FAILED = "ADD_SONG_FAILED";
 export const RSVP_REQUESTED = "RSVP_REQUESTED";
 export const RSVP_SUCCESS = "RSVP_SUCCESS";
 export const RSVP_FAILED = "RSVP_FAILED";
+export const TOGGLE_SEGMENT = "TOGGLE_SEGMENT";
 
 export const ADD_ALLERGY = "ADD_ALLERGY";
 
@@ -47,5 +48,12 @@ export const rsvpSuccess = (answer) => {
 export const rsvpFailed = () => {
     return {
         type: RSVP_FAILED
+    };
+};
+
+export const toggleSegment = (name) => {
+    return {
+        type: TOGGLE_SEGMENT,
+        name: name
     };
 }

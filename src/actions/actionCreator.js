@@ -3,7 +3,7 @@
  */
 import {
     addSongRequested, addSongFailed, addSongSuccess,
-    rsvpRequested, rsvpSuccess, rsvpFailed
+    rsvpRequested, rsvpSuccess, rsvpFailed, toggleSegment as toggleSegmentAction
 } from './actions';
 import {rsvpApi, addSongApi} from '../api'
 
@@ -42,5 +42,9 @@ export const addFood = name =>
                 dispatch(actions.addSongFailed());
             });
     };
+
+export const toggleSegment = name => (dispatch) => {
+    dispatch(toggleSegmentAction(name));
+}
 
 export default { addSong, addFood };

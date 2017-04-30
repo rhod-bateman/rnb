@@ -36,7 +36,7 @@ const SongList = ({songs}) => {
 };
 
 const Music = ({addSong, added, failed, songs}) => (
-    <Segment title={music.title}>
+    <Segment title={music.title} name="music">
         <p>{music.p1}</p>
         <p>{music.p2}</p>
         <p>{music.p3}</p>

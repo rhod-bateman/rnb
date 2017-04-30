@@ -5,12 +5,14 @@
 import { combineReducers } from 'redux';
 import rsvp from './rsvpReducer';
 import music from './musicReducer';
+import segment from './segmentReducer';
 
 
 
 const rootReducer = combineReducers({
     rsvp: rsvp,
-    music: music
+    music: music,
+    segment: segment
 });
 
 export default rootReducer;

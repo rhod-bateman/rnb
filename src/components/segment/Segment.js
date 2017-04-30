@@ -3,42 +3,40 @@
  */
 import React, { PropTypes } from 'react';
 import styles from './segment.css';
+import {toggleSegment as toggleSegmentActionCreator} from '../../actions/actionCreator';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-class Segment extends React.Component {
-    constructor({title, children}) {
-        super();
-        this.title = title;
-        this.children = children;
-        this.state = {
-            contentVisible: false
-        };
-    }
 
-    toggleVisible() {
-        let visible = this.state.contentVisible;
-        this.setState({contentVisible: !visible});
-    }
+const bindToggleVisible = boundActionCreator => (name) => {
+    return boundActionCreator(name);
+};
 
-    render() {
-        return (
+const Segment = ({title, children, toggleSegment, openSegment, name}) => {
+
+    var isVisible = openSegment && openSegment === name;
+
+    return (
         <div className={styles.container}>
-            <h2 className={styles.header} onClick={() => this.toggleVisible()}>{this.title} </h2>
+            <h2 className={styles.header} onClick={() => toggleSegment(name)}>{title} </h2>
             {
-                this.state.contentVisible && <div className={styles.contentBox}>{this.children}</div>
+                isVisible && <div className={styles.contentBox}>{children}</div>
             }
         </div>);
-    }
 }
 
 
 const mapStateToProps = state => ({
-    segments: state.segments
+    openSegment: state.segment
 });
 
 const mapDispatchToProps = dispatch => ({
-    formSubmitAction: bindActionCreators(loginActionCreators.submitLoginForm, dispatch)
+    toggleSegment: bindToggleVisible(bindActionCreators(toggleSegmentActionCreator, dispatch)),
 });
 
-export default Segment;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Segment);
 
 

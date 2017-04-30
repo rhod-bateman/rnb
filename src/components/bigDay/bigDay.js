@@ -11,7 +11,7 @@ import {bigDay as text, dressCode, address} from '../../data/text';
 import {googleMapsLink} from '../../data/data';
 
 const BigDay = () => (
-    <Segment title="The Big Day">
+    <Segment title="The Big Day" name="bigDay">
         <section>
             We will wed in the woods in Rhod's parents' garden followed by a picnic on the lawn.
         </section>

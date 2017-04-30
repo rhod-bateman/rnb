@@ -41,7 +41,7 @@ const rsvpForm = (rsvpYes, rsvpNo) => {
 const Rsvp = ({answer, inProgress, status, rsvpYes, rsvpNo}) => {
     let failed = status == 'failed';
 
-    let html = (<Segment title="RSVP">
+    let html = (<Segment title="RSVP" name="rsvp">
         { !answer && <section className={styles.rsvpForm}>
             <p>Please RSVP by April 15th to bethandrhod@gmail.com</p>
             {false && rsvpForm(rsvpYes, rsvpNo)}

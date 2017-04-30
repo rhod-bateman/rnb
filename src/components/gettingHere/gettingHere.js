@@ -10,7 +10,7 @@ import {googleMapsLink} from '../../data/data';
 import {Map, Marker} from '../map/map';
 
 const BigDay = () => (
-    <Segment title="Getting Here">
+    <Segment title="Getting Here" name="journey">
         <section>
             <p>Parking is limited but the house is a short taxi ride from Guildford station.</p>
             <p><a href={googleMapsLink} target="_blank" rel="noopener noreferrer">Open GU48RD in Maps</a> or show your taxi driver this map so he can find us.</p>

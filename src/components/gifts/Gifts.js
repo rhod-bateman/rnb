@@ -11,7 +11,7 @@ import styles from './gifts.css';
 import Segment from '../segment/Segment';
 
 const Gifts = () => (
-    <Segment title="Gifts">
+    <Segment title="Gifts" name="gifts">
         <section>
             Coming soon...
         </section>

@@ -12,7 +12,7 @@ import actionCreator from '../../actions/actionCreator';
 import {accomodation} from '../../data/text';
 
 const Accomodation = ({}) => (
-    <Segment title="Where can I stay?">
+    <Segment title="Where can I stay?" name="accommodation">
         <p>Coming soon...</p>
     </Segment>
 );
