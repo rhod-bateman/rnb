@@ -10,11 +10,16 @@
     --green: rgb(0,128,0);
     --transparentWhite: rgba(245, 245, 255,0.7);
     --reallyTransparentWhite: rgba(245, 245, 255,0.4);
-    --baseBackgroundColour: rgb(4, 60, 22);
+    --baseBackgroundColour: rgb(200, 190, 177);
 }
+
+@custom-media --phone (width <= 500px); /* width <= 500px */
+@custom-media --desktop (width > 500px); /* width > 500px */
 
 html {
     background-color: var(--baseBackgroundColour);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -22,7 +27,6 @@ body {
     font-family: var(--bodyFont);
     text-align:center;
     line-height: 1.5em;
-    max-height: 1440px;
     background-color: transparent;
 }
 

@@ -5,7 +5,7 @@
 
 .appContainer {
     max-width: 1000px;
-    min-width: 400px;
+    min-width: 300px;
     margin: auto;
 }
 
@@ -15,6 +15,7 @@
     left:0;
     top:0;
     z-index: -1;
+    display:none;
 }
 
 
@@ -22,5 +23,9 @@
     font-family: var(--headingFont);
     font-size: 1.8em;
     color: var(--headingColour);
-    margin: 4em auto;
+    padding: 2em 0;
+    @media (--desktop) {
+        padding: 4em 0;
+    }
 }
+
