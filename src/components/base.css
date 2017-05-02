@@ -22,6 +22,10 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    background-color: var(--baseBackgroundColour);
+}
+
 body {
     font-size: 1.33em;
     font-family: var(--bodyFont);
