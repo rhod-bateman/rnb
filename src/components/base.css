@@ -10,7 +10,7 @@
     --green: rgb(0,128,0);
     --transparentWhite: rgba(245, 245, 255,0.7);
     --reallyTransparentWhite: rgba(245, 245, 255,0.4);
-    --baseBackgroundColour: rgb(200, 190, 177);
+    --baseBackgroundColour: rgb(205, 190, 171);
 }
 
 @custom-media --phone (width <= 500px); /* width <= 500px */

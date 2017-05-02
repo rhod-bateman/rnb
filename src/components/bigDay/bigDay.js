@@ -16,10 +16,17 @@ const BigDay = () => (
             We will wed in the woods in Rhod's parents' garden followed by a picnic on the lawn.
         </section>
         <section>
-            Come and join us at mid-day on July 15th at <a href={googleMapsLink} target="_blank" rel="nofollow noopener noreferrer">{address}</a>
+            Come and join us at 12:45 on July 15th at <a href={googleMapsLink} target="_blank" rel="nofollow noopener noreferrer">{address}</a>
         </section>
-        <section>Dress Code: {dressCode}</section>
         <TimeTable></TimeTable>
+        <section>Dress Code: colourful.</section>
+        <section>What to bring:
+            <ul>
+                <li>Suntan lotion</li>
+                <li>Suitable footwear for woodland and lawns.</li>
+                <li>A cushion. Here are some <a> great seat cushions.</a></li>
+            </ul>
+        </section>
     </Segment>
 );
 

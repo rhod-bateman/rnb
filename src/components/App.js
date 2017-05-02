@@ -17,7 +17,7 @@ import repeatImage from  '../assets/woodsBlurRepetitionSection.jpg';
 const App = () => (
 <div className={styles.appContainer}>
     <Image className={styles.backgroundImage} src={backgroundImage} />
-    <h1 className={styles.header}>Beth and Rhods Woodland Wedding</h1>
+    <h1 className={styles.header}>Beth and Rhod's Woodland Wedding</h1>
     <BigDay/>
     <GettingHere/>
     <Rsvp/>
