@@ -9,6 +9,6 @@ export const addSongApi = (song) => {
 }
 
 
-export const rsvpApi = (answer) => {
-    return post({uri: '/rsvp'}, {answer: answer});
+export const rsvpApi = (form) => {
+    return post({uri: '/rsvp'}, {form: form});
 };

@@ -8,9 +8,13 @@ import {
 import {rsvpApi, addSongApi} from '../api'
 
 export const rsvp = answer =>
-    (dispatch) => {
+    (dispatch, getState) => {
+    debugger;
+    let state = getState();
+    let formState = state.rsvp.rsvp;
+
         dispatch(rsvpRequested());
-        return rsvpApi(answer)
+        return rsvpApi(formState)
             .then((result) => {
                 dispatch(rsvpSuccess(answer));
             })

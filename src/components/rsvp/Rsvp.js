@@ -9,84 +9,63 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './rsvp.css';
 import Segment from '../segment/Segment';
-import {rsvp as rsvpAction} from '../../actions/actionCreator'
+import {rsvp as rsvpAction} from '../../actions/actionCreator';
+import { Form, Control } from 'react-redux-form';
 
 
-const Option = ({onClick, buttonStyle, buttonText}) => (
-    <div className={buttonStyle} onClick={onClick} >{buttonText}</div>
-);
 
-const Confirmation = (coming) => {
-    if (coming) {
-        return <p> Look forward to seeing you there! </p>
-    } else {
-        return <p> Sorry you cant make it. Catch up soon... </p>
-    }
-};
+const Rsvp = ({submitRsvp}) => (
+    <Segment title="RSVP" name="rsvp">
+        <Form
+            model="rsvp"
+            onSubmit={submitRsvp}
+            className={styles.rsvpForm}
+        >
+            <div >
+                <fieldset>
+                    <legend >Please RSVP by May 25th</legend>
 
-const rsvpForm = (rsvpYes, rsvpNo) => {
-    return (
-    <div className={styles.paragraph}>
-        <Option buttonStyle={styles.rsvpYes} onClick={rsvpYes} buttonText="Yes"/>
-        <Option buttonStyle={styles.rsvpNo} onClick={rsvpNo} buttonText="No"/>
-    </div>);
-    /*{
-        !!inProgress && <p>Saving...</p>
-    }
-    {
-        !!failed && <p>Something went wrong.</p>
-    });*/
-}
+                    <section >
+                        <p>We have opted for a kid-free wedding to indulge our penchant for TenaciousD and stories about bad
+                            judgement. And more practically because we just dont have the space. We will obviously make an exception for recent arrivals who cannot be left but please let us know in
+                            advance if you need to bring them.</p>
+                    </section>
 
-const Rsvp = ({answer, inProgress, status, rsvpYes, rsvpNo}) => {
-    let failed = status == 'failed';
+                    <div className={styles.field}>
+                        <label>So are you coming?</label>
+                        <Control.select model="rsvp.answer" >
+                            <option value="Yes">Yes with bells on</option>
+                            <option value="Yes">Yes but with no bells</option>
+                            <option value="No">No, because I hear there might be bells</option>
+                        </Control.select>
+                    </div>
 
-    let html = (<Segment title="RSVP" name="rsvp">
-        { !answer && <section className={styles.rsvpForm}>
-            <p>Please RSVP by April 15th to bethandrhod@gmail.com</p>
-            {false && rsvpForm(rsvpYes, rsvpNo)}
-        </section>}
+                    <div className={styles.field}>
+                        <label>We really dont want to poison you during the day; is there anything we shouldn't feed you?
+                        (This is for the caterer so please tell us even if we'd normally get it right when you come for
+                            dinner)</label>
+                        <Control.textarea model="rsvp.allergies" />
+                    </div>
 
-        {
-            !!answer && <section>
-                <p>Thanks for rsvping!</p>
-                <Confirmation coming={answer == 'coming'} />
-            </section>
-        }
-
-        <section>
-            <p>We really dont want to poison you during the day; is there aything we shouldnt feed you?</p>
-            <p>(This is for the caterer so please tell us even if we'd normally get it right when you come for
-                dinner)</p>
-        </section>
-
-        <section >
-            <p>We have opted for a kid-free wedding to indulge our penchant for TenaciousD and stories about bad
-                judgement.</p>
-            <p>And more practically because we just dont have the space.</p>
-            <p>We will obviously make an exception for recent arrivals who cannot be left but please let us know in
-                advance if you need to bring them.</p>
-        </section>
+                    <div className={styles.field}>
+                        <label>Please suggest any songs you think we should have on the playlist. </label>
+                        <Control.textarea model="rsvp.songs" />
+                    </div>
+                </fieldset>
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
+        </Form>
     </Segment>);
 
-    return html;
-};
-
 const mapStateToProps = state => ({
-    answer: state.rsvp.answer,
-    inProgress: state.rsvp.inProgress,
-    status: state.rsvp.status
+    rsvp: state.rsvp
 });
 
-const createOnClick = (value, boundActionCreator) => (event) => {
-    event.preventDefault();
-    return boundActionCreator(value);
-};
-
 const mapDispatchToProps = dispatch => ({
-    rsvpYes: createOnClick("Yes", bindActionCreators(rsvpAction, dispatch)),
-    rsvpNo: createOnClick("No", bindActionCreators(rsvpAction, dispatch))
-})
+    submitRsvp: bindActionCreators(rsvpAction, dispatch)
+});
 
 export default connect(
     mapStateToProps,

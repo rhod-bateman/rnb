@@ -6,6 +6,7 @@ import { combineReducers } from 'redux';
 import rsvp from './rsvpReducer';
 import music from './musicReducer';
 import segment from './segmentReducer';
+import {combineForms} from 'react-redux-form';
 
 
 

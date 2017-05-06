@@ -31,6 +31,9 @@ var config = {
         authKey: process.env.AUTH_KEY || "fMG3sjDryaLscRWVjLPRbucEtAoTafI4lOSpVUfQHMvEGODZUnVoX71IRBTqwLtlNtPTmnL9GtpczgQ8Q7OTUA==",
         databaseId: "ToDoList",
         collectionId: "Items"
+    },
+    email: {
+        key:"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"
     }
 };
 

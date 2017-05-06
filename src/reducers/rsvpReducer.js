@@ -3,13 +3,14 @@
  */
 
 import {RSVP_SUCCESS, RSVP_FAILED, RSVP_REQUESTED} from '../actions/actions';
+import {combineForms} from 'react-redux-form';
 
-const initialState = {
-    inProgress: false,
-    status: undefined,
-    coming: undefined
+const  initialState= {
 };
 
+const formReducer =  combineForms({
+    rsvp: initialState,
+});
 const reducer = (state = initialState, action) => {
 
     switch (action.type) {
@@ -26,4 +27,4 @@ const reducer = (state = initialState, action) => {
     return state;
 };
 
-export default reducer;
+export default formReducer;
