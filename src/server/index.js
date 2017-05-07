@@ -43,11 +43,10 @@ const handleRender = (state) => {
     let stateString = JSON.stringify(store.getState());
 
     // Render the component to a string
-    const html = renderToStaticMarkup(
-        <Html bundle={config.app.bundleName} title={config.app.title} state={stateString} css={config.app.css}>
-            {content}
-        </Html>
+    let html = renderToStaticMarkup(
+        <Html bundle={config.app.bundleName} title={config.app.title} state={stateString} css={config.app.css}>injectContent</Html>
     );
+    html = html.replace('injectContent', content);
 
     return `<!DOCTYPE html>${html}`;
 };
