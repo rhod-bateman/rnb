@@ -10,7 +10,7 @@ import {actions as rrfActions} from 'react-redux-form';
 
 export const rsvp = answer =>
     (dispatch, getState) => {
-    debugger;
+
     let state = getState();
     let formState = state.form.rsvp;
 

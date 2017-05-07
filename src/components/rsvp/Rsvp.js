@@ -32,6 +32,12 @@ const Rsvp = ({submitRsvp, inProgress, success, failed}) => (
                     </section>
 
                     <div className={styles.field}>
+                        <label>Name(s)</label>
+                        <Control.text
+                            model="rsvp.name"/>
+                    </div>
+
+                    <div className={styles.field}>
                         <label>So are you coming?</label>
                         <Control.select
                             model="rsvp.answer">
@@ -55,9 +61,12 @@ const Rsvp = ({submitRsvp, inProgress, success, failed}) => (
                             model="rsvp.songs"/>
                     </div>
                 </fieldset>
-                <button type="submit" className={inProgress ? "inProgress" : false}>
+                <Control.button
+                    model="."
+                    disabled={{valid: false}}
+                    className={{"inProgress":inProgress}}>
                     { success ? "Thanks for sending!" : "Send"}
-                </button>
+                </Control.button>
                 {failed && <p className={styles.failedText}>
                     Sorry, something went a bit wrong. Please try again or let us know at bethandrhod@gmail.com</p>}
             </div>

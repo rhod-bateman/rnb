@@ -87,9 +87,7 @@
     border-radius: 15px 15px 15px 0px;
 }
 
-.rsvpForm input[type="submit"],
-.rsvpForm button[type="submit"],
-.rsvpForm input[type="button"]
+.rsvpForm button
 {
     position: relative;
     display: block;
@@ -108,9 +106,14 @@
     border-radius:5px;
     margin-bottom: 10px;
 }
-.rsvpForm input[type="submit"]:hover,
-.rsvpForm button[type="submit"]:hover,
-.rsvpForm input[type="button"]:hover
+
+.rsvpForm button:hover
 {
     background: #109177;
+}
+
+button.disabled, button.inProgress
+{
+    background: #fff;
+    color: var(--green)
 }
