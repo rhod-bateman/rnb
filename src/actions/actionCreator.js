@@ -5,22 +5,25 @@ import {
     addSongRequested, addSongFailed, addSongSuccess,
     rsvpRequested, rsvpSuccess, rsvpFailed, toggleSegment as toggleSegmentAction
 } from './actions';
-import {rsvpApi, addSongApi} from '../api'
+import {rsvpApi, addSongApi} from '../api';
+import {actions as rrfActions} from 'react-redux-form';
 
 export const rsvp = answer =>
     (dispatch, getState) => {
     debugger;
     let state = getState();
-    let formState = state.rsvp.rsvp;
+    let formState = state.form.rsvp;
 
         dispatch(rsvpRequested());
-        return rsvpApi(formState)
+        let promise = rsvpApi(formState)
             .then((result) => {
                 dispatch(rsvpSuccess(answer));
             })
             .catch((result) => {
-                dispatch(rsvpFailed());
+                dispatch(rsvpFailed({ status: result.status, data: result.data}));
             });
+
+        dispatch(rrfActions.submit('rsvp', promise));
     };
 
 export const addSong = song =>

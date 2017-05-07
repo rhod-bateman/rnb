@@ -14,7 +14,7 @@ import { Form, Control } from 'react-redux-form';
 
 
 
-const Rsvp = ({submitRsvp}) => (
+const Rsvp = ({submitRsvp, inProgress, success, failed}) => (
     <Segment title="RSVP" name="rsvp">
         <Form
             model="rsvp"
@@ -33,7 +33,8 @@ const Rsvp = ({submitRsvp}) => (
 
                     <div className={styles.field}>
                         <label>So are you coming?</label>
-                        <Control.select model="rsvp.answer" >
+                        <Control.select
+                            model="rsvp.answer">
                             <option value="Yes">Yes with bells on</option>
                             <option value="Yes">Yes but with no bells</option>
                             <option value="No">No, because I hear there might be bells</option>
@@ -44,23 +45,30 @@ const Rsvp = ({submitRsvp}) => (
                         <label>We really dont want to poison you during the day; is there anything we shouldn't feed you?
                         (This is for the caterer so please tell us even if we'd normally get it right when you come for
                             dinner)</label>
-                        <Control.textarea model="rsvp.allergies" />
+                        <Control.textarea
+                            model="rsvp.allergies"/>
                     </div>
 
                     <div className={styles.field}>
                         <label>Please suggest any songs you think we should have on the playlist. </label>
-                        <Control.textarea model="rsvp.songs" />
+                        <Control.textarea
+                            model="rsvp.songs"/>
                     </div>
                 </fieldset>
-                <button type="submit">
-                    Submit
+                <button type="submit" className={inProgress ? "inProgress" : false}>
+                    { success ? "Thanks for sending!" : "Send"}
                 </button>
+                {failed && <p className={styles.failedText}>
+                    Sorry, something went a bit wrong. Please try again or let us know at bethandrhod@gmail.com</p>}
             </div>
         </Form>
     </Segment>);
 
 const mapStateToProps = state => ({
-    rsvp: state.rsvp
+    rsvp: state.rsvp,
+    inProgress: state.rsvp.inProgress,
+    success: state.rsvp.success,
+    failed: state.rsvp.error
 });
 
 const mapDispatchToProps = dispatch => ({

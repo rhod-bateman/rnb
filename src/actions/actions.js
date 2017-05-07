@@ -45,9 +45,10 @@ export const rsvpSuccess = (answer) => {
     };
 }
 
-export const rsvpFailed = () => {
+export const rsvpFailed = (error) => {
     return {
-        type: RSVP_FAILED
+        type: RSVP_FAILED,
+        error:error
     };
 };
 
