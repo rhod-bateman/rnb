@@ -46,6 +46,7 @@ const handleRender = (state) => {
     let html = renderToStaticMarkup(
         <Html bundle={config.app.bundleName} title={config.app.title} state={stateString} css={config.app.css}>injectContent</Html>
     );
+    html = html.replace('injectContent', content);
 
     html = html.replace('injectContent', content);
 
