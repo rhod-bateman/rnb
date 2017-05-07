@@ -5,11 +5,12 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "webpack",
+    "dev:server": "babel-node devServer.server.js",
     "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --history-api-fallback",
     "clean": "rimraf dist",
     "lint": "esw src",
     "lint-watch": "npm run lint -- --watch",
-      "build": "rimraf dist && npm run  build-client && npm run build-server-render",
+    "build": "rimraf dist && npm run  build-client && npm run build-server-render",
     "build-server": "webpack -d --config webpack.config.server.js",
     "build-server-render": "webpack -d --config webpack.config.server.js",
     "build-client": "webpack -d --config webpack.config.client.js",
@@ -19,7 +20,7 @@
     "test": "mocha",
     "prebuild": "rimraf dist",
     "build-dev-server": "rimraf dist && babel ./src/ --out-file ./dist/",
-      "server-dev-build": "babel src -s -D -d dist"
+    "server-dev-build": "babel src -s -D -d dist"
   },
   "repository": {
     "type": "git",
@@ -41,12 +42,13 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
-      "react-redux-form": "1.5.3",
+    "react-redux-form": "1.5.3",
     "react-router": "3.0.0",
     "recompose": "0.20.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "sendgrid": "^5.1.0"
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.5.0",

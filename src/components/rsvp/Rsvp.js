@@ -35,9 +35,9 @@ const Rsvp = ({submitRsvp, inProgress, success, failed}) => (
                         <label>So are you coming?</label>
                         <Control.select
                             model="rsvp.answer">
-                            <option value="Yes">Yes with bells on</option>
-                            <option value="Yes">Yes but with no bells</option>
-                            <option value="No">No, because I hear there might be bells</option>
+                            <option value="Yes with bells on">Yes with bells on</option>
+                            <option value="Yes but with no bells">Yes but with no bells</option>
+                            <option value="No, because I hear there might be bells">No, because I hear there might be bells</option>
                         </Control.select>
                     </div>
 

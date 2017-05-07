@@ -20,7 +20,6 @@ import backgroundImage from  '../assets/woodsBlurHD.jpg';
      <BigDay/>
      <GettingHere/>
      <Rsvp/>
-    <Music/>
     <Gifts/>
     <Food/>
 </div>
