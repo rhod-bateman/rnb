@@ -11,7 +11,6 @@ import Gifts from './gifts/Gifts'
 import Rsvp from './rsvp/Rsvp';
 import Image from './utils/image/index';
 import backgroundImage from  '../assets/woodsBlurHD.jpg';
-require('smoothscroll-polyfill').polyfill();
 
  const App = () => (
  <div className={styles.appContainer}>
