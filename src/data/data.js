@@ -12,7 +12,7 @@ export const timetable = {
     "11:30":"tie round head dance time"
 };
 
-export const googleMapsLink="https://maps.google.com/?q=51.210111,-0.516389";
+export const googleMapsLink="https://www.google.com/maps?q=51.210111,-0.516389";
 
 export const spotifyLink="https://open.spotify.com/user/rhod-williams/playlist/3Z73VeVkAUmwxoeHnAMUKc";
 
