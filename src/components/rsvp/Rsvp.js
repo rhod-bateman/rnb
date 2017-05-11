@@ -10,11 +10,15 @@ import { connect } from 'react-redux';
 import styles from './rsvp.css';
 import Segment from '../segment/Segment';
 import {rsvp as rsvpAction} from '../../actions/actionCreator';
-import { Form, Control } from 'react-redux-form';
+import { Form, Control, Errors, Field } from 'react-redux-form';
 
+const getErrorClass = (formState, name) => {
+    let field = formState[name];
+    let inValid = field && field.touched && !field.valid;
+    return inValid ? styles.fieldError : "";
+}
 
-
-const Rsvp = ({submitRsvp, inProgress, success, failed}) => (
+const Rsvp = ({submitRsvp, inProgress, success, failed, formState}) => (
     <Segment title="RSVP" name="rsvp">
         <Form
             model="rsvp"
@@ -31,42 +35,52 @@ const Rsvp = ({submitRsvp, inProgress, success, failed}) => (
                             advance if you need to bring them.</p>
                     </section>
 
-                    <div className={styles.field}>
+                    <Field model=".name" className={styles.field} >
                         <label>Name(s)</label>
-                        <Control.text
-                            model="rsvp.name"/>
-                    </div>
+                        <Control
+                            type="text"
+                            model=".name"
+                            required
+                            className={getErrorClass(formState, "name")}/>
+                        <Errors
+                            className={styles.errors}
+                            model=".name"
+                            show="touched"
+                            messages={{
+                                valueMissing: 'Please give your names'
+                            }} />
+                    </Field>
 
-                    <div className={styles.field}>
+                    <Field className={styles.field} model=".answer">
                         <label>So are you coming?</label>
                         <Control.select
-                            model="rsvp.answer">
+                            model=".answer" >
                             <option value="Yes with bells on">Yes with bells on</option>
                             <option value="Yes but with no bells">Yes but with no bells</option>
                             <option value="No, because I hear there might be bells">No, because I hear there might be bells</option>
                         </Control.select>
-                    </div>
+                    </Field>
 
-                    <div className={styles.field}>
+                    <Field className={styles.field} model=".allergies">
                         <label>We really dont want to poison you during the day; is there anything we shouldn't feed you?
                         (This is for the caterer so please tell us even if we'd normally get it right when you come for
                             dinner)</label>
                         <Control.textarea
-                            model="rsvp.allergies"/>
-                    </div>
+                            model=".allergies"/>
+                    </Field>
 
-                    <div className={styles.field}>
+                    <Field className={styles.field} model=".songs">
                         <label>Please suggest any songs you think we should have on the playlist. </label>
                         <Control.textarea
-                            model="rsvp.songs"/>
-                    </div>
+                            model=".songs"/>
+                    </Field>
                 </fieldset>
-                <Control.button
+                <button
+                    type="submit"
                     model="."
-                    disabled={{valid: false}}
-                    className={{"inProgress":inProgress}}>
+                    className={inProgress ? "inProgress":""}>
                     { success ? "Thanks for sending!" : "Send"}
-                </Control.button>
+                </button>
                 {failed && <p className={styles.failedText}>
                     Sorry, something went a bit wrong. Please try again or let us know at bethandrhod@gmail.com</p>}
             </div>
@@ -77,7 +91,8 @@ const mapStateToProps = state => ({
     rsvp: state.rsvp,
     inProgress: state.rsvp.inProgress,
     success: state.rsvp.success,
-    failed: state.rsvp.error
+    failed: state.rsvp.error,
+    formState: state.form && state.form.forms && state.form.forms.rsvp && state.form.forms.rsvp ? state.form.forms.rsvp : {}
 });
 
 const mapDispatchToProps = dispatch => ({

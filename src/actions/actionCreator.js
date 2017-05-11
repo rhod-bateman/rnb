@@ -14,17 +14,20 @@ export const rsvp = answer =>
     let state = getState();
     let formState = state.form.rsvp;
 
-        dispatch(rsvpRequested());
-        let promise = rsvpApi(formState)
-            .then((result) => {
-                dispatch(rsvpSuccess(answer));
-            })
-            .catch((result) => {
-                dispatch(rsvpFailed({ status: result.status, data: result.data}));
-            });
+    dispatch(rrfActions.setPending('rsvp', true));
+    dispatch(rsvpRequested());
+    let promise = rsvpApi(formState)
+        .then((result) => {
+            dispatch(rsvpSuccess(answer));
+            dispatch(rrfActions.setSubmitted('rsvp', true));
+        })
+        .catch((result) => {
+            dispatch(rrfActions.setSubmitFailed('rsvp'));
+            dispatch(rsvpFailed({ status: result.status, data: result.data}));
+        });
 
-        dispatch(rrfActions.submit('rsvp', promise));
-    };
+    dispatch(rrfActions.submit('rsvp', promise));
+};
 
 export const addSong = song =>
     (dispatch) => {
