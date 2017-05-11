@@ -12,10 +12,7 @@ export const timetable = {
     "11:30":"tie round head dance time"
 };
 
-export const googleMapsLink="https://maps.google.com/?q=51.2101173,-0.518579";
+export const googleMapsLink="https://maps.google.com/?q=51.210111,-0.516389";
 
+export const spotifyLink="https://open.spotify.com/user/rhod-williams/playlist/3Z73VeVkAUmwxoeHnAMUKc";
 
-export const songs = [
-    "champagne supernove by oasis",
-    "dont stop me now by queen"
-];

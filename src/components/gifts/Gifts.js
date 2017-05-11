@@ -18,18 +18,8 @@ const Gifts = () => (
     </Segment>
 );
 
-const mapStateToProps = state => ({
 
-});
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators({}, dispatch)
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Gifts);
+export default Gifts;
 
 
 
