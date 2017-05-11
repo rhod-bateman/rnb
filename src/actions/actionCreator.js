@@ -32,13 +32,14 @@ export const rsvp = answer =>
 export const toggleSegment = (name) => (dispatch) => {
     dispatch(toggleSegmentAction(name));
     dispatch(() => {
-        var element = document.getElementById("section-"+name);
-        var scrollPosition = document.body.scrollTop;
         setTimeout(() => {
-            if (scrollPosition > element.offsetTop) {
-                window.scrollTo(0, element.offsetTop);
-            }
-         }, 0);
+            var element = document.getElementById("section-"+name);
+            var sectionTop = element ? element.offsetTop : 0;
+            let sectionOutOfView = sectionTop < document.body.scrollTop;
+            sectionOutOfView && document.querySelector("#section-"+name).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }, 1);
     });
 }
 

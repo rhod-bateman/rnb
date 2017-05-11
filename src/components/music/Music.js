@@ -7,7 +7,7 @@
 import React, { PropTypes } from 'react';
 import Segment from '../segment/Segment';
 import {spotifyLink} from '../../data/data';
-import NewTablink from '../utils/NewTabLink'
+import NewTablink from '../utils/newTabLink/index'
 
 
 const Music = () => (

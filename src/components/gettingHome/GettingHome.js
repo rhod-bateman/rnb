@@ -5,7 +5,7 @@
 import React, { PropTypes } from 'react';
 import Segment from '../segment/Segment';
 import {bookingLink} from '../../data/data';
-import NewTabLink from '../utils/NewTabLink'
+import NewTabLink from '../utils/newTabLink/index'
 
 const GettingHome = () => (
     <Segment title="...Then Getting Home" name="gettingHome">

@@ -48,7 +48,8 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "request": "^2.81.0",
-    "sendgrid": "^5.1.0"
+    "sendgrid": "^5.1.0",
+    "smoothscroll-polyfill": "^0.3.5"
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.5.0",
