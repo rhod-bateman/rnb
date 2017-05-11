@@ -6,10 +6,10 @@ import styles from './app.css';
 import BigDay from './bigDay/bigDay'
 import GettingHere from './gettingHere/GettingHere'
 import Music from './music/Music'
-import Accomodation from './accomodation/Accomodation'
+import GettingHome from './gettingHome/GettingHome'
 import Gifts from './gifts/Gifts'
 import Rsvp from './rsvp/Rsvp';
-import Image from './image/index';
+import Image from './utils/image/index';
 import backgroundImage from  '../assets/woodsBlurHD.jpg';
 
 
@@ -21,8 +21,8 @@ import backgroundImage from  '../assets/woodsBlurHD.jpg';
      <Rsvp/>
      <Music/>
     <Gifts/>
-    <Accomodation/>
      <GettingHere/>
+     <GettingHome/>
 </div>
 );
 

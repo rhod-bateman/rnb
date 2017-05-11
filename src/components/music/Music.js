@@ -7,13 +7,14 @@
 import React, { PropTypes } from 'react';
 import Segment from '../segment/Segment';
 import {spotifyLink} from '../../data/data';
+import NewTablink from '../utils/NewTabLink'
 
 
 const Music = () => (
     <Segment title="Music" name="music">
         <section>
-            <p>Please follow our <a href={spotifyLink} >spotify playlist</a> and add your favourite songs</p>
-            <p>Spotify tries to hide to follow button from you, its behind the helpful "you can add songs" message.</p>
+            <p>Please follow our <NewTablink href={spotifyLink} >spotify playlist</NewTablink> and add your favourite songs</p>
+            <p>On mobile, Spotify tries to hide to follow button from you. Its behind the helpful "you can add songs to this playlist" message.</p>
         </section>
     </Segment>);
 

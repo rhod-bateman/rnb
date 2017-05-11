@@ -7,8 +7,11 @@ import { connect } from 'react-redux';
 import styles from './bigDay.css';
 import Segment from '../segment/Segment';
 import TimeTable from '../timetable/Timetable';
-import {bigDay as text, dressCode, address} from '../../data/text';
+import {address} from '../../data/text';
 import {googleMapsLink} from '../../data/data';
+import NewTabLink from '../utils/NewTabLink';
+import {cushion1Link, cushion1Image, cushion2Link, cushion2Image} from '../../data/data';
+import Image from '../utils/image';
 
 const BigDay = () => (
     <Segment title="The Big Day" name="bigDay">
@@ -18,13 +21,22 @@ const BigDay = () => (
         <section>
             Come and join us at 12:45 on July 15th at <a href={googleMapsLink} target="_blank" rel="nofollow noopener noreferrer">{address}</a>
         </section>
+
         <TimeTable></TimeTable>
-        <section>Dress Code: colourful.</section>
-        <section>What to bring:
+
+        <section>
+            <h3>Dress Code</h3>
+            Be colourful!
+        </section>
+
+        <section><h3>What to bring:</h3>
             <ul>
                 <li>Suntan lotion</li>
                 <li>Suitable footwear for woodland and lawns.</li>
-                <li>A cushion. Here are some <a> great seat cushions.</a></li>
+                <li>A cushion for the picnic. Amazon has cushion-chairs, try these;
+                    <NewTabLink href={cushion1Link} className={styles.amazonLink}> <Image src={cushion1Image} className={styles.amazonImage} /></NewTabLink>
+                    <NewTabLink href={cushion2Link} className={styles.amazonLink}> <Image src={cushion2Image} className={styles.amazonImage} /></NewTabLink>
+                </li>
             </ul>
         </section>
     </Segment>

@@ -2,7 +2,7 @@
  * Created by qtj929 on 13/02/2017.
  */
 import React, { PropTypes } from 'react';
-import styles from './image.css';
+import styles from './Image.css';
 
 class Image extends React.Component {
     constructor({src, className}) {

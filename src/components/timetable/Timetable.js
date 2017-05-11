@@ -15,7 +15,7 @@ const listItems = Object.keys(timetable).map((key) =>
 
 const TimeTable = () => (
     <div>
-        <h3 >Our plan for the day</h3>
+        <h3>Our plan for the day</h3>
         <ol>{ listItems }</ol>
     </div>
 );
