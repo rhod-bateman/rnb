@@ -29,32 +29,8 @@ export const rsvp = answer =>
     dispatch(rrfActions.submit('rsvp', promise));
 };
 
-export const addSong = song =>
-    (dispatch) => {
-        dispatch(addSongRequested());
-        return addSongApi(song)
-            .then((result) => {
-                dispatch(addSongSuccess(song));
-            })
-            .catch((result) => {
-                dispatch(addSongFailed());
-            });
-    };
-
-export const addFood = name =>
-    (dispatch) => {
-        dispatch(addSongRequested());
-        return api.addSong(name)
-            .then((result) => {
-                dispatch(actions.addSongSuccess());
-            })
-            .catch((result) => {
-                dispatch(actions.addSongFailed());
-            });
-    };
-
 export const toggleSegment = name => (dispatch) => {
     dispatch(toggleSegmentAction(name));
 }
 
-export default { addSong, addFood };
+export default { rsvp, toggleSegment };

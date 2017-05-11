@@ -85,7 +85,7 @@ app.post('/rsvp', (req, res, next) => {
                 res.status(200);
                 res.json({success: true});
                 resolve();
-            });
+            }).catch(err => reject(err));
     })
     .catch(function (error) {
         console.log(error);

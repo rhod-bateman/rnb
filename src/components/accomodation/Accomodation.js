@@ -17,16 +17,8 @@ const Accomodation = ({}) => (
     </Segment>
 );
 
-const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({
-    addSong: bindActionCreators(actionCreator.addSong, dispatch)
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Accomodation);
+export default Accomodation;
 
 
 

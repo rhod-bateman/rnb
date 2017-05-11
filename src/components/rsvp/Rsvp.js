@@ -18,8 +18,21 @@ const getErrorClass = (formState, name) => {
     return inValid ? styles.fieldError : "";
 }
 
-const Rsvp = ({submitRsvp, inProgress, success, failed, formState}) => (
-    <Segment title="RSVP" name="rsvp">
+const Rsvp = (props) => (
+<Segment title="RSVP" name="rsvp">
+        <div >{FormOrSuccess(props)}</div>
+    </Segment>);
+
+const FormOrSuccess = (props) => {
+    if (props.success) {
+        return (<section ><p>Thanks for RSVPing!</p></section>);
+    }
+    else {
+        return RsvpForm(props);
+    }
+}
+
+const RsvpForm = ({submitRsvp, inProgress, success, failed, formState}) => (
         <Form
             model="rsvp"
             onSubmit={submitRsvp}
@@ -82,8 +95,7 @@ const Rsvp = ({submitRsvp, inProgress, success, failed, formState}) => (
                 {failed && <p className={styles.failedText}>
                     Sorry, something went a bit wrong. Please try again or let us know at bethandrhod@gmail.com</p>}
             </div>
-        </Form>
-    </Segment>);
+        </Form>);
 
 const mapStateToProps = state => ({
     rsvp: state.rsvp,

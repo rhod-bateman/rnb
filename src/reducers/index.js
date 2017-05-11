@@ -4,10 +4,8 @@
 
 import { combineReducers } from 'redux';
 import {initialFormState as rsvpInitialState, default as rsvp} from './rsvpReducer';
-import music from './musicReducer';
 import segment from './segmentReducer';
 import {combineForms} from 'react-redux-form';
-
 
 
 const rootReducer = combineReducers({
@@ -15,7 +13,6 @@ const rootReducer = combineReducers({
         rsvp: rsvpInitialState
     }),
     rsvp: rsvp,
-    music: music,
     segment: segment
 });
 
