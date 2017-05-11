@@ -19,9 +19,9 @@ import backgroundImage from  '../assets/woodsBlurHD.jpg';
      <BigDay/>
      <Rsvp/>
      <Music/>
-    <Gifts/>
      <GettingHere/>
      <GettingHome/>
+     <Gifts/>
 </div>
 );
 

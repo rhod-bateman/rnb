@@ -13,7 +13,16 @@ import Segment from '../segment/Segment';
 const Gifts = () => (
     <Segment title="Gifts" name="gifts">
         <section>
-            Coming soon...
+            <p>We've been living together for enough years to have everything we need (and probably more).</p>
+            <p>Please don't feel that you need to give us anything, we're happy enough that you're coming.</p>
+            <p>But as people keep asking us for ideas, here are a few we thought of...</p>
+        </section>
+        <section>
+            <ul>
+                <li>There are a 1001 good causes in the world. You could pick your favourite and make a donation for us</li>
+                <li>If you'd rather spend your money on us, life is all about experiences.</li>
+                <li>Or if you really want to give things, we still dont have proper curtains. We think that Hilary's blinds do vouchers. </li>
+            </ul>
         </section>
     </Segment>
 );

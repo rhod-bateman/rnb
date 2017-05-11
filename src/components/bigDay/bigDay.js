@@ -26,14 +26,15 @@ const BigDay = () => (
 
         <section>
             <h3>Dress Code</h3>
-            Be colourful!
+            <p>Whatever makes you feel most fabulous</p>
+            <p>Please bear in mind that you will be walking though leaf litter in the woods and sitting on a picnic blanket later on.</p>
         </section>
 
         <section><h3>What to bring:</h3>
             <ul>
                 <li>Suntan lotion</li>
                 <li>Suitable footwear for woodland and lawns.</li>
-                <li>A cushion for the picnic. Amazon has cushion-chairs, try these;
+                <li>If you want a cushion for the picnic, amazon has some cushion-chairs;
                     <NewTabLink href={cushion1Link} > <Image src={cushion1Image} className={styles.amazonImage} /></NewTabLink>
                     <NewTabLink href={cushion2Link} > <Image src={cushion2Image} className={styles.amazonImage} /></NewTabLink>
                 </li>
