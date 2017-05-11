@@ -10,13 +10,9 @@ import AppComponent from '../components/App';
 import reducer from '../reducers/index';
 import config from '../config/server.config';
 import Html from '../components/Html'
-import thunk from 'redux-thunk';
-import {songs} from '../data/data';
 
 const serverSideRender = () => {
-    var preloadedState = {
-        songs: songs
-    };
+    var preloadedState = {};
     console.log('preLoad state=', preloadedState);
 
     return handleRender(preloadedState);
