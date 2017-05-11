@@ -36,11 +36,7 @@ app.post('/rsvp', (req, res, next) => {
     new Promise((resolve, reject) => {
 
         let data = req.body.form || {};
-        let message = `
-        Name: ${data.name}
-        Answer: ${data.answer}
-        Allergies: ${data.allergies}
-        Notes: ${data.notes}`;
+
         let characterLimit = 2000;
 
         // Validate data
@@ -51,8 +47,14 @@ app.post('/rsvp', (req, res, next) => {
             || (data.notes && data.notes.length > characterLimit)
             || (data.allergies && data.allergies.length > characterLimit)) {
 
-            reject('invalid data');
+            return reject('invalid data');
         }
+
+        let message = `
+            Name: ${data.name}
+            Answer: ${data.answer}
+            Allergies: ${data.allergies}
+            Notes: ${data.notes}`;
 
         var request = sendgridInstance.emptyRequest({
             method: 'POST',
