@@ -62,17 +62,15 @@ const Rsvp = ({submitRsvp, inProgress, success, failed, formState}) => (
                     </Field>
 
                     <Field className={styles.field} model=".allergies">
-                        <label>We really dont want to poison you during the day; is there anything we shouldn't feed you?
-                        (This is for the caterer so please tell us even if we'd normally get it right when you come for
-                            dinner)</label>
+                        <label>We really dont want to poison you during the day; is there anything we shouldn't feed you?</label>
                         <Control.textarea
                             model=".allergies"/>
                     </Field>
 
-                    <Field className={styles.field} model=".songs">
-                        <label>Please suggest any songs you think we should have on the playlist. </label>
+                    <Field className={styles.field} model=".notes">
+                        <label>Anything else we should know? </label>
                         <Control.textarea
-                            model=".songs"/>
+                            model=".notes"/>
                     </Field>
                 </fieldset>
                 <button

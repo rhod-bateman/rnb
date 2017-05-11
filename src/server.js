@@ -11,7 +11,6 @@ import sendgrid from 'sendgrid';
 import serverRender from './server/index';
 
 
-
 const app = express();
 const sendgridInstance = sendgrid(config.email.key);
 
@@ -34,55 +33,65 @@ app.get('/', (req, res, next) => {
 });
 
 app.post('/rsvp', (req, res, next) => {
-    let data = req.body.form || {};
-    let message = `
-    Name: ${data.name}
-    Answer: ${data.answer}
-    Allergies: ${data.allergies}
-    Songs: ${data.songs}`;
+    new Promise((resolve, reject) => {
 
+        let data = req.body.form || {};
+        let message = `
+        Name: ${data.name}
+        Answer: ${data.answer}
+        Allergies: ${data.allergies}
+        Notes: ${data.notes}`;
+        let characterLimit = 2000;
 
-    var request = sendgridInstance.emptyRequest({
-        method: 'POST',
-        path: '/v3/mail/send',
-        body: {
-            personalizations: [
-                {
-                    to: [
-                        {
-                            email: 'bethandrhod@gmail.com'
-                        }
-                    ],
-                    subject: 'RSVP'
-                }
-            ],
-            from: {
-                email: 'bethandrhod@gmail.com'
-            },
-            content: [
-                {
-                    type: 'text/plain',
-                    value: message
-                }
-            ]
+        // Validate data
+        if (!data.name
+            || data.name.length > characterLimit
+            || !data.answer
+            || data.answer.length > characterLimit
+            || (data.notes && data.notes.length > characterLimit)
+            || (data.allergies && data.allergies.length > characterLimit)) {
+
+            reject('invalid data');
         }
-    });
 
-    sendgridInstance.API(request)
-        .then(function (response) {
-            res.status(200);
-            res.json({success: true});
-        })
-        .catch(function (error) {
-            console.log(error);
-            res.status(500);
-            res.send(error);
+        var request = sendgridInstance.emptyRequest({
+            method: 'POST',
+            path: '/v3/mail/send',
+            body: {
+                personalizations: [
+                    {
+                        to: [
+                            {
+                                email: 'bethandrhod@gmail.com'
+                            }
+                        ],
+                        subject: 'RSVP'
+                    }
+                ],
+                from: {
+                    email: 'bethandrhod@gmail.com'
+                },
+                content: [
+                    {
+                        type: 'text/plain',
+                        value: message
+                    }
+                ]
+            }
         });
-});
 
-app.post('/addSong', (req, res, next) => {
-    res.status(200);
-    res.json({success: true});
+        sendgridInstance.API(request)
+            .then(function (response) {
+                res.status(200);
+                res.json({success: true});
+                resolve();
+            });
+    })
+    .catch(function (error) {
+        console.log(error);
+        res.status(500);
+        res.send(error);
+    });
 });
 
 
