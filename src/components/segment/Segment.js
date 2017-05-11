@@ -17,8 +17,8 @@ const Segment = ({title, children, toggleSegment, openSegment, name}) => {
     var isVisible = openSegment && openSegment === name;
 
     return (
-        <div className={styles.container}>
-            <h2 className={styles.header} onClick={() => toggleSegment(name)}>{title} </h2>
+        <div className={styles.container} id={"section-"+name}>
+            <h2 className={styles.header} onClick={() => toggleSegment(name)}>{title}</h2>
             {
                 isVisible && <div className={styles.contentBox}>{children}</div>
             }

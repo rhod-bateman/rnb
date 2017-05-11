@@ -29,8 +29,17 @@ export const rsvp = answer =>
     dispatch(rrfActions.submit('rsvp', promise));
 };
 
-export const toggleSegment = name => (dispatch) => {
+export const toggleSegment = (name) => (dispatch) => {
     dispatch(toggleSegmentAction(name));
+    dispatch(() => {
+        var element = document.getElementById("section-"+name);
+        var scrollPosition = document.body.scrollTop;
+        setTimeout(() => {
+            if (scrollPosition > element.offsetTop) {
+                window.scrollTo(0, element.offsetTop);
+            }
+         }, 0);
+    });
 }
 
 export default { rsvp, toggleSegment };
