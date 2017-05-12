@@ -8,9 +8,10 @@ import GettingHere from './gettingHere/GettingHere'
 import Music from './music/Music'
 import GettingHome from './gettingHome/GettingHome'
 import Gifts from './gifts/Gifts'
+import Photos from './photos/'
 import Rsvp from './rsvp/Rsvp';
 import Image from './utils/image/index';
-import backgroundImage from  '../assets/woodsBlurHD.jpg';
+import backgroundImage from '../assets/woodsBlurHD.jpg';
 
  const App = () => (
  <div className={styles.appContainer}>
@@ -21,6 +22,7 @@ import backgroundImage from  '../assets/woodsBlurHD.jpg';
      <Music/>
      <GettingHere/>
      <GettingHome/>
+     <Photos/>
      <Gifts/>
 </div>
 );

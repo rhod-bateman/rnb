@@ -25,3 +25,5 @@ export const cushion1Image="https://images-na.ssl-images-amazon.com/images/I/610
 
 export const cushion2Link="http://www.amazon.co.uk/gp/mas/dl/android?asin=B01N1I6AEB/";
 export const cushion2Image="https://images-na.ssl-images-amazon.com/images/I/71LSU5loefL._SX522_.jpg";
+
+export const photosAlbum="https://goo.gl/photos/jeV1x7ME11sg5xdf9";
