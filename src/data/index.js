@@ -2,15 +2,17 @@
  * Created by qtj929 on 27/02/2017.
  */
 export const timetable = {
-    "12:00":"arrive",
-    "12:45":"ceremony",
+    "12:45":"arrive",
+    "13:15":"ceremony",
     "2:15":"speeches",
     "2:45":"picnic",
-    "5:15":"cake cutting (and eating)",
-    "7:00":"hog roast",
+    "5:30":"cake cutting (and eating)",
+    "7:00":"mexican hog roast",
     "8:30":"band time",
     "11:30":"tie round head dance time"
 };
+
+export const address = "Lingwood House, Blackheath GU48RD";
 
 export const googleMapsLink="https://www.google.com/maps?q=51.210111,-0.516389";
 

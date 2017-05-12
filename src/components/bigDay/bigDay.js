@@ -7,10 +7,9 @@ import { connect } from 'react-redux';
 import styles from './bigDay.css';
 import Segment from '../segment/Segment';
 import TimeTable from '../timetable/Timetable';
-import {address} from '../../data/text';
-import {googleMapsLink} from '../../data/data';
+import {googleMapsLink} from '../../data/index';
 import NewTabLink from '../utils/newTabLink';
-import {cushion1Link, cushion1Image, cushion2Link, cushion2Image} from '../../data/data';
+import {address, cushion1Link, cushion1Image, cushion2Link, cushion2Image} from '../../data/index';
 import Image from '../utils/image';
 
 const BigDay = () => (

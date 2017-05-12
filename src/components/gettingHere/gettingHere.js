@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Segment from '../segment/Segment';
 import styles from './gettingHere.css';
-import {googleMapsLink} from '../../data/data';
+import {googleMapsLink} from '../../data/index';
 import {Map, Marker} from '../map/map';
 import NewTabLink from '../utils/newTabLink';
 

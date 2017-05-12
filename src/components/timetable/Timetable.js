@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './timetable.css';
 import Segment from '../segment/Segment';
-import {timetable} from '../../data/data';
+import {timetable} from '../../data/index';
 
 
 const listItems = Object.keys(timetable).map((key) =>

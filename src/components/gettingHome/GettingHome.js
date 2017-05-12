@@ -4,7 +4,7 @@
 
 import React, { PropTypes } from 'react';
 import Segment from '../segment/Segment';
-import {bookingLink} from '../../data/data';
+import {bookingLink} from '../../data/index';
 import NewTabLink from '../utils/newTabLink/index'
 
 const GettingHome = () => (

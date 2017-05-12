@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react';
 import styles from './index.css';
 
 const NewTabLink = ({href, children}) =>
-    (<a href={href} className={styles.link} target="_blank" rel="noopener noreferrer">{children}</a>);
+    (<a href={href} className={styles.link} target="_blank" rel="nofollow">{children}</a>);
 
 export default NewTabLink;
 

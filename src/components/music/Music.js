@@ -6,7 +6,7 @@
  */
 import React, { PropTypes } from 'react';
 import Segment from '../segment/Segment';
-import {spotifyLink} from '../../data/data';
+import {spotifyLink} from '../../data/index';
 import NewTablink from '../utils/newTabLink/index'
 
 

@@ -1,7 +1,7 @@
 /**
  * Created by qtj929 on 17/04/2017.
  */
-import {songs} from '../data/data';
+import {songs} from '../data/index';
 
 const addSong = (req, res, next) => {
     let song = req.data.song;
