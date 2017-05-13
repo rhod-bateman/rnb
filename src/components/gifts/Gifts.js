@@ -21,7 +21,7 @@ const Gifts = () => (
             <ul>
                 <li>There are a 1001 good causes in the world. You could pick your favourite and make a donation for us</li>
                 <li>If you'd rather spend your money on us, life is all about experiences.</li>
-                <li>Or if you really want to give things, we still dont have proper curtains. We think that Hilary's blinds do vouchers. </li>
+                <li>Or if you really want to give us a thing, we still don't have proper curtains. We're setting up a gift list with John Lewis, details here soon. </li>
             </ul>
         </section>
     </Segment>
