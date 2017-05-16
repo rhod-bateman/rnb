@@ -131,3 +131,7 @@ button.disabled, button.inProgress
     background: #fff;
     color: var(--green)
 }
+
+.bells {
+    text-align-last:center;
+}

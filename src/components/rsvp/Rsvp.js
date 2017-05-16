@@ -67,6 +67,7 @@ const RsvpForm = ({submitRsvp, inProgress, success, failed, formState}) => (
                     <Field className={styles.field} model=".answer">
                         <label>So are you coming?</label>
                         <Control.select
+                            className={styles.bells}
                             model=".answer" >
                             <option value="Yes with bells on">Yes with bells on</option>
                             <option value="Yes but with no bells">Yes but with no bells</option>
