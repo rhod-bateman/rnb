@@ -2,7 +2,7 @@
  * Created by qtj929 on 27/02/2017.
  */
 export const timetable = {
-    "12:45":"arrive",
+    "13:00":"arrive",
     "13:15":"ceremony",
     "2:15":"speeches",
     "2:45":"picnic",

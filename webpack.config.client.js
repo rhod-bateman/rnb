@@ -100,7 +100,11 @@ module.exports = {
 
                 return `webpack://rnb/${resourcePath}`;
             }
-        })
+        }),
+        new CopyWebpackPlugin([
+                // {output}/file.txt
+                { from: 'src/robots.txt' }
+        ])
     ],
     postcss() {
         return [

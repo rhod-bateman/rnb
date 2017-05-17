@@ -37,6 +37,7 @@ const BigDay = () => (
                     <NewTabLink href={cushion1Link} > <Image src={cushion1Image} className={styles.amazonImage} /></NewTabLink>
                     <NewTabLink href={cushion2Link} > <Image src={cushion2Image} className={styles.amazonImage} /></NewTabLink>
                 </li>
+                <li>Something warm for when the sun goes down.</li>
             </ul>
         </section>
     </Segment>
