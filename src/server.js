@@ -24,14 +24,6 @@ app.use('/static', express.static(path.resolve(config.build.staticDir)));
 // Temporary fix for a build issue
 app.use('/images', express.static(path.resolve(config.build.staticDir, 'images')));
 
-
-app.get('/', (req, res, next) => {
-
-     let html = serverRender({});
-     res.send(html);
-    next();
-});
-
 app.post('/rsvp', (req, res, next) => {
     new Promise((resolve, reject) => {
 
@@ -96,6 +88,15 @@ app.post('/rsvp', (req, res, next) => {
     });
 });
 
+app.use('/robots.txt', (req, res, next) => {
+    res.sendFile(path.resolve('./static/robots.txt'));
+});
+
+app.get('/', (req, res, next) => {
+
+    let html = serverRender({});
+    res.send(html);
+});
 
 const options = {};
 
