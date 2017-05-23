@@ -9,6 +9,8 @@ import styles from './gettingHere.css';
 import {googleMapsLink} from '../../data/index';
 import {Map, Marker} from '../map/map';
 import NewTabLink from '../utils/newTabLink';
+import weddingIcon from '../../assets/heart.png'
+import parkingIcon from '../../assets/parking.png'
 
 const BigDay = () => (
     <Segment title="Getting Here..." name="journey">
@@ -17,10 +19,10 @@ const BigDay = () => (
             <p><NewTabLink href={googleMapsLink}>Open GU48RD in Maps</NewTabLink> or show your taxi driver this map so he can find us.</p>
         </section>
         <div className={styles.map}>
-            <Map center={[51.210111, -0.516389]} zoom={11}>
-                <Marker lat={51.2104979} lng={-0.517000}><div className={styles.parking}>W</div></Marker>
-                <Marker lat={51.2057962} lng={-0.518342} ><div className={styles.parking}>P</div></Marker>
-                <Marker lat={51.2062943} lng={-0.521292} ><div className={styles.parking}>P</div></Marker>
+            <Map center={[51.210111, -0.516389]} zoom={12}>
+                <Marker lat={51.2104979} lng={-0.517000}><img className={styles.parking} src={weddingIcon} alt="W" /></Marker>
+                <Marker lat={51.2057962} lng={-0.518342} ><img className={styles.parking} src={parkingIcon} alt="P" /></Marker>
+                <Marker lat={51.2062943} lng={-0.521292} ><img className={styles.parking} src={parkingIcon} alt="P" /></Marker>
             </Map>
         </div>
     </Segment>
