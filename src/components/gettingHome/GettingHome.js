@@ -9,7 +9,8 @@ import NewTabLink from '../utils/newTabLink/index'
 
 const GettingHome = () => (
     <Segment title="...Then Getting Home" name="gettingHome">
-        <p><NewTabLink href={bookingLink}>Booking.com</NewTabLink> has a few hotels in the area. </p>
+        <p>Guildford has the most choice in hotels; there arent many bargains in the local area.</p>
+        <p>If you would like to be closer, <NewTabLink href={bookingLink}>Booking.com</NewTabLink> has a few hotels nearby (ish). </p>
     </Segment>
 );
 
