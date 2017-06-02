@@ -9,6 +9,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './gifts.css';
 import Segment from '../segment/Segment';
+import NewTablink from '../utils/newTabLink';
+import { giftLink } from '../../data/'
 
 const Gifts = () => (
     <Segment title="Gifts" name="gifts">
@@ -21,7 +23,7 @@ const Gifts = () => (
             <ul>
                 <li>There are a 1001 good causes in the world. You could pick your favourite and make a donation for us</li>
                 <li>If you'd rather spend your money on us, life is all about experiences.</li>
-                <li>Or if you really want to give us a thing, we still don't have proper curtains. We're setting up a gift list with John Lewis, details here soon. </li>
+                <li>Or if you really want to give us a thing, we still don't have proper curtains. We're setting up a <NewTablink href={giftLink} > John Lewis gift list </NewTablink>. </li>
             </ul>
         </section>
     </Segment>

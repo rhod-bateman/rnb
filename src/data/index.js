@@ -27,3 +27,5 @@ export const cushion2Link="https://www.amazon.co.uk/gp/product/B01N1I6AEB";
 export const cushion2Image="https://images-na.ssl-images-amazon.com/images/I/71LSU5loefL._SX522_.jpg";
 
 export const photosAlbum="https://goo.gl/photos/jeV1x7ME11sg5xdf9";
+
+export const giftLink="https://www.johnlewisgiftlist.com/giftint/findagiftlist";
