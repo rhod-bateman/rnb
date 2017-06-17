@@ -28,4 +28,4 @@ export const cushion2Image="https://images-na.ssl-images-amazon.com/images/I/71L
 
 export const photosAlbum="https://goo.gl/photos/jeV1x7ME11sg5xdf9";
 
-export const giftLink="https://www.johnlewisgiftlist.com/giftint/findagiftlist";
+export const giftLink="https://www.johnlewisgiftlist.com/giftint/JSPs/GiftList/BuyGifts/GuestFindAList.jsp";
