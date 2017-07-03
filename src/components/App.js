@@ -12,18 +12,20 @@ import Photos from './photos/'
 import Rsvp from './rsvp/Rsvp';
 import Image from './utils/image/index';
 import backgroundImage from '../assets/woodsBlurHD.jpg';
+import ThingsToKnow from './thingsToKnow'
 
  const App = () => (
  <div className={styles.appContainer}>
     <Image className={styles.backgroundImage} src={backgroundImage}/>
     <h1 className={styles.header}>Beth and Rhods Woodland Wedding</h1>
      <BigDay/>
-     <Rsvp/>
-     <Music/>
+     <ThingsToKnow/>
      <GettingHere/>
      <GettingHome/>
+     <Music/>
      <Photos/>
      <Gifts/>
+     <Rsvp/>
 </div>
 );
 

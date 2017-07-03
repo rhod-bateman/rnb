@@ -2,7 +2,7 @@
  * Created by qtj929 on 27/02/2017.
  */
 export const timetable = {
-    "13:00":"arrive",
+    "13:00":"pimms o'clock",
     "13:15":"ceremony",
     "2:15":"speeches",
     "2:45":"picnic",
@@ -29,3 +29,5 @@ export const cushion2Image="https://images-na.ssl-images-amazon.com/images/I/71L
 export const photosAlbum="https://goo.gl/photos/jeV1x7ME11sg5xdf9";
 
 export const giftLink="https://www.johnlewisgiftlist.com/giftint/JSPs/GiftList/BuyGifts/GuestFindAList.jsp";
+
+export const chilworthWalkingDirections = "https://www.google.co.uk/maps/dir/Chilworth/51.2102111,-0.5168247/@51.2123667,-0.5274521,15.5z/data=!4m9!4m8!1m5!1m1!1s0x4875daf9fea143ed:0xb2d9d2732e6e2898!2m2!1d-0.5248!2d51.21521!1m0!3e2";
