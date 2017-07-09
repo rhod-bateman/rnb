@@ -19,9 +19,9 @@ const Html = ({ bundle, children, title, state, css }) => (
         <link href={css} rel="stylesheet"/>
     </head>
     <body>
-    <div id="root">
+    <div id="root"><div>
         {children}
-    </div>
+    </div></div>
     <script type="text/javascript" src={bundle}/>
     <div dangerouslySetInnerHTML={getStateHtml(state)}></div>
     </body>
