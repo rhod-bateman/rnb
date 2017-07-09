@@ -2,8 +2,8 @@
  * Created by qtj929 on 27/02/2017.
  */
 export const timetable = {
-    "13:00":"pimms o'clock",
-    "13:15":"ceremony",
+    "1:00":"pimms o'clock",
+    "1:15":"ceremony",
     "2:15":"speeches",
     "2:45":"picnic",
     "5:30":"cake cutting (and eating)",
